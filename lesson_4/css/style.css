@@ -1,0 +1,95 @@
+@import url(reset.css);
+
+* {
+	color: rgb(10, 80, 10);
+}
+
+h1 {
+	color: red;
+}
+
+.item {
+	color: rgb(8, 29, 221);
+}
+
+li.even-number {
+	color: rgb(179, 179, 10);
+}
+
+.item.odd-number {
+	color: rgb(20, 211, 211);
+}
+
+p span {
+	color: blueviolet;
+}
+
+.sake > .text {
+	color: rgb(174, 209, 197);
+}
+
+.img ~ .text {
+	color: black;
+}
+
+.img + .text-big {
+	color: rgb(192, 125, 125);
+}
+
+.foreigners .subtitle {
+	color: rgb(120, 207, 132);
+}
+
+.food .subtitle,
+.food .text {
+	color: rgb(67, 67, 153);
+}
+
+#love {
+	color: rgb(179, 145, 210);
+}
+
+.subtitle-money ~ .text {
+	color: rgb(138, 138, 87);
+}
+
+.subway > .subway-text {
+	color: aquamarine;
+}
+
+.subway .subtitle {
+	color: blueviolet;
+}
+
+.sakura p {
+	color: rgb(194, 122, 14);
+}
+
+.subtitle-purity ~ p {
+	color: #dcef0a;
+}
+
+.text.hotel-text {
+	color: blue;
+}
+
+.hotel-text a {
+	color: yellow;
+}
+
+[class*= "text-transport"] {
+	color: red;
+}
+
+.subtitle ~ .text-transport-other {
+	color: #dcef0a;
+}
+
+.religion .text,
+.religion .subtitle {
+	color: aquamarine;
+}
+
+.img + .text {
+	color: blue;
+}
