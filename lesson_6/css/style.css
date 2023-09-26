@@ -1,0 +1,233 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+/* CONSULTING WEBSITE TEMPLATE */
+
+.consulting {
+	max-width: 692px;
+	margin: 0 auto 50px;
+}
+
+[class*= "title1"] {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	line-height: 1.27;
+}
+
+[class*= "text1"] {
+	color: #7D7D7D;
+	font-size: 18px;
+	line-height: 1.46; /* 26.31/18 */
+}
+
+.img-consulting {
+	width: 100%;
+	margin-bottom: 37px;
+}
+
+.consulting-info {
+	margin-bottom: 42px;
+}
+
+.info-title1 {
+	color: #37393F;
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+
+.consulting-content {
+	margin-bottom: 40px;
+}
+
+.content-title1 {
+	color: #6B77E5;
+	font-size: 20px;
+	margin-bottom: 12px; 
+}
+
+.content-text1 {
+	color: #7D7D7D;
+}
+
+.benefits-img {
+	display: inline-block;
+	width: 50%;
+	padding-right: 2%;
+}
+
+.benefits-info {
+	display: inline-block;
+	width: 49%;
+}
+
+.benefits-title1 {
+	color: #37393F;
+	font-size: 25px;
+	margin-bottom: 15px;
+}
+
+.benefits-subtitle1 {
+	color: #40DDB6;
+	font-size: 20px;
+	margin-bottom: 24px;
+}
+
+.item-margin {
+	margin-bottom: 30px;
+}
+
+.list-img {
+	width: 27px;
+	height: 27px;
+	margin-right: 8px;
+}
+
+/* JEWELLERY */
+
+.jewellery {
+	max-width: 1169px;
+	margin: 0 auto 50px;
+}
+
+.jewellery-info {
+	padding: 21px 0;
+	display: inline-block;
+	width: 47.5%; /* 563/1169 */
+	margin-right: 3%; /* 38/1169 */
+}
+
+.-jewellery-subtitle {
+	color: #D06B00;
+	font-size: 28px;
+	margin-bottom: 13px;
+}
+
+.jewellery-title {
+
+	margin-bottom: 25px;
+	color: #0E333D;
+	font-size: 59px;
+	font-family: 'DM Serif Text', serif;
+	line-height: 1.46; /* 86.44/59 */
+}
+
+.jewellery-text {
+	color: #474747;
+	font-size: 20px;
+	line-height: 1.8; /* 36/20 */
+}
+
+.jewellery-img {
+	width: 23.25%; /* 273/1169 */
+}
+
+.img-id {
+	margin-right: 1.88%; /* 22/1169 */
+}
+
+/* HOMEWORK EXPERIMENTS */
+
+.london-stories {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.london-head,
+.london-history {
+	margin-bottom: 30px;
+}
+
+.london-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 35px;
+	font-weight: 600;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+.london-list {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.list-item {
+	margin-bottom: 20px;
+}
+
+.list-link span {
+	font-weight: 500;
+}
+
+.london-text {
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 18px;
+	color: #e8380c;
+	line-height: 1.4;
+}
+
+.london-text span {
+	color: #000;
+	text-shadow: 1px 2px 1px #de0e0e;
+	font-weight: 600;
+}
+
+.history-title,
+.parts-title {
+	font-size: 27px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.history-top {
+	margin-bottom: 15px;
+}
+
+.history-images {
+	margin-bottom: 15px;
+}
+
+.history-img {
+	display: inline-block;
+	width: 49%;
+}
+
+.history-text,
+.bottom-text {
+	font-size: 18px;
+	color: #625b5a;
+	line-height: 1.4;
+}
+
+.bottom-img {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	margin-bottom: 15px;
+}
+
+.bottom-images {
+	display: block;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.parts-text {
+	color: #373f41;
+	font-size: 19px;
+	line-height: 1.6;
+}
+
+.parts-img {
+	display: block;
+	margin: 15px auto;
+	width: 400px;
+	height: 300px;
+}
