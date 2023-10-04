@@ -1,0 +1,331 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+.lesson-7 {
+	max-width: max-content;
+	font-family: 'Poppins', sans-serif;
+	font-size: 65px;
+	font-weight: 700;
+	text-align: center;
+	margin: 50px auto ;
+	padding: 15px;
+	border: 7px solid #40ddb6;
+	border-radius: 25px;
+	box-shadow: 10px 10px 10px 5px #171616;
+}
+/* Consulting Website Templete Licensing */
+.consulting-website {
+	max-width: 1248px;
+	margin: 0 auto 100px;
+	padding:  0 15px;
+	font-family: "Inter", sans-serif;
+	font-size: 18px;
+	color: #7d7d7d;
+}
+
+.licensing {
+	margin-bottom: 50px;
+}
+
+.top-licensing {
+	margin-bottom: 70px;
+	text-align: center;
+	color: #37393f;
+}
+
+.lable-licensing {
+	margin-bottom: 16px;
+}
+
+.lable-square {
+	display: inline-block;
+	margin-right: 6px;
+	width: 12px;
+	height: 12px;
+	background-color: #40ddb6;
+}
+
+.lable-info {
+	display: inline-block;
+	font-weight: 500;
+}
+
+.title-licensing,
+.title-pictures,
+.sub-title-pictures,
+.title-photography,
+.sub-title-info,
+.title-fonts {
+	font-size: 60px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	line-height: 1.21; /* 72.6/60 */
+}
+
+.pictures-licensing,
+.photography-licensing {
+	margin-bottom: 100px;
+}
+
+.title-pictures,
+.sub-title-pictures,
+.title-photography,
+.sub-title-info,
+.title-fonts {
+	color: #37393F;
+	font-size: 40px;
+}
+
+.title-pictures,
+.title-photography {
+	margin-bottom: 11px;
+}
+
+.text-pictures {
+	margin-bottom: 32px;
+	line-height: 1.46; /* 26.31/18 */
+}
+
+.sub-title-pictures,
+.sub-title-info {
+	font-size: 30px;
+}
+
+.sub-title-pictures span,
+.sub-title-info span {
+	color: #40ddb6;
+	font-weight: 400;
+}
+
+.text-photography {
+	margin-bottom: 24px;
+	line-height: 1.46;
+}
+
+.info-margin {
+	margin-bottom: 24px;
+}
+
+.sub-title-info {
+	margin-bottom: 8px;
+}
+
+.text-info,
+.fonts-text a {
+	color: #40ddb6;
+	line-height: 1.46;
+}
+
+.fonts-text a {
+	font-weight: 500;
+}
+
+/* Consulting Website Templete Project information */
+
+.project-info {
+	max-width: 830px;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.title-project-info {
+	color: #37393f;
+	font-size: 40px;
+	font-family: 'Poppins', sans-serif;;
+	font-weight: 700;
+	line-height: 1.27; /* 50.8/40 */
+	margin-bottom: 13px;
+}
+
+.paragraph {
+	margin-bottom: 26px;
+}
+
+.text-project-info {
+	margin-bottom: 35px;
+	line-height: 1.46; /* 26.31/18 */
+}
+
+.list-project-info,
+.number-list {
+	margin-bottom: 46px;
+	padding-left: 16px;
+	font-weight: 500;
+	line-height: 1.46;
+}
+
+.list-project-info li,
+.number-list li {
+	margin-bottom: 26px;
+}
+
+.list-project-info li {
+	list-style: disc;
+	list-style-position: inside;
+}
+
+.number-list li {
+	list-style: decimal-leading-zero;
+	list-style-position: inside;
+}
+
+li.last {
+	margin-bottom: 0;
+}
+
+/* Clothing for Women Online in India */
+
+.clothing {
+	max-width: 1240px;
+	margin: 0 auto 100px;
+	padding-left: 21px;
+	color: #807d7e;
+	font-size: 20px;
+	font-family: "Causten", sans-serif;
+	line-height: 1.68; /* 33.5/20 */
+	letter-spacing: 0.40px;
+	text-align: justify;
+}
+
+.top-clothing {
+	margin-bottom: 30px;
+}
+
+.lable-clothing {
+	margin-bottom: -6px;
+	margin-left: -21px;
+	margin-right: 11px;
+	display: inline-block;
+	width: 6px;
+	height: 28px;
+	border-radius: 10px;
+	background-color: #8a33fd;
+}
+
+.title-clothing {
+	display: inline-block;
+	color: #3C4242;
+	font-size: 28px;
+	font-family: "Core Sans C", sans-serif;
+	font-weight: 650;
+	line-height: 1.2; /* 33.5/28 */
+	letter-spacing: 0.56px;
+}
+
+.main-clothing {
+	/* padding-left: 21px; */
+	margin-bottom: 20px;
+}
+
+.main-info {
+	margin-bottom: 25px;
+}
+.title-main {
+	font-size: 20px;
+	font-family: "Core Sans C", sans-serif;
+	font-weight: 650;
+	margin-bottom: 25px;
+}
+
+.text-main p {
+	margin-bottom: 20px;
+}
+
+.main-info.last,
+.text-main .last {
+	margin-bottom: 0;
+}
+
+.text-main span {
+	font-weight: 700;
+}
+
+.text-bottom {
+	font-family: "Core Sans C", sans-serif;
+	font-weight: 650;
+	text-transform: capitalize;
+}
+
+/* Jewellery */
+
+.jewellery {
+	max-width: 1133px;
+	padding: 0 15px;
+	margin: 0 auto 50px;
+	font-family: 'Cormorant Infant', serif;
+	color: #606060;
+	font-size: 0;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.jewellery-info {
+	display: inline-block;
+	max-width: 503px;
+	margin-right: 85px;
+	padding-top: 70px;
+}
+
+.jewellery-sub-title {
+	color: #D58417;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom: 27px;
+}
+
+.jewellery-title {
+	color: #000;
+	font-size: 64px;
+	text-transform: capitalize;
+	margin-bottom: 31px;
+}
+
+.jewellery-text {
+	font-size: 30px;
+	line-height: 1.4; /* 42/30 */
+}
+
+.jewellery-images {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.jewellery-img {
+	display: inline-block;
+	border: 1px solid #502203;
+	border-radius: 235px;
+	vertical-align: middle;
+}
+
+.jewellery-img-smal {
+	width: 177px;
+	height: 336px;
+	margin-right: 30px;
+}
+
+.img-smal {
+	margin-top: 14px;
+	margin-left: -10px;
+}
+
+.jewellery-img-big {
+	width: 307px;
+	height: 500px;
+}
+
+.img-big {
+	margin-top: 19px;
+	margin-left: -11px;
+}
+
+/* Footer */
+.footer-link {
+	font-size: 40px;
+	max-width: max-content;
+	margin: 0 auto;
+	padding: 10px;
+	color: #9f7947;
+	border-top: 10px solid #eaee0b;
+	border-radius: 10px;
+	outline: 10px solid rgb(10, 21, 226);
+}
