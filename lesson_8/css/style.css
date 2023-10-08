@@ -1,0 +1,472 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+/* HEADER */
+.header {
+	padding-top: 30px;
+	margin-bottom: 30px;
+}
+
+.header-title {
+	font-family: "Core Sans C";
+	font-size: 35px;
+	text-align: center;
+}
+
+/* MAIN */
+.main {
+	margin-bottom: 30px;
+}
+
+/* Lesson 8.Experiments */
+.expirients {
+	max-width: 1130px;
+	padding: 0 15px;
+	margin: 0 auto 100px;
+}
+
+.block-green {
+	background-color: rgb(201, 228, 65);
+	margin-bottom: 20px;
+}
+
+.block-img {
+	margin: 0 auto;
+	max-width: 800px;
+	min-height: 400px;
+	margin-bottom: 20px;
+	border: 3px solid red;
+	background-image: url("../img/pattern.jpg");
+}
+
+.gradient {
+	min-width: 300px;
+	min-height: 300px;
+	margin-bottom: 20px;
+	border: 3px solid red;
+	background-image: radial-gradient(circle, rgb(228, 148, 10) 0%, rgb(65, 150, 211) 32%, rgba(67, 116, 220, 0.86) 60%, rgba(9, 20, 167, 0.788) 100%);
+}
+
+.block01 {
+	background-image: url("../img/office.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	margin-bottom: 20px;
+}
+
+.block-button {
+	margin-bottom: 20px;
+}
+
+.button {
+	display: inline-block;
+	padding: 35px 100px;
+	border-radius: 30px;
+	color: aliceblue;
+	font-size: 35px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.button-color {
+	margin-right: 20px;
+	border: 5px solid rgb(0, 26, 255);
+	background-color: #3a85d6;
+	box-shadow: 15px 10px 10px rgb(87, 14, 124);
+}
+
+.button-img {
+	border: 4px solid rgb(144, 4, 251);
+	background-image: linear-gradient(90deg, rgba(220,118,67,0.9645421124886775) 1%, rgba(161,104,199,1) 37%, rgba(161,104,199,0.7935276197350544) 70%, rgba(252,70,237,0.5906290690104167) 100%);
+	box-shadow: 10px 5px 5px rgb(163, 87, 10);
+}
+
+.block02 {
+	min-width: 600px;
+	min-height: 500px;
+	margin-bottom: 20px;
+	background: 
+		url("../img/smile.webp") no-repeat center / 300px,
+		url("../img/smile.webp") no-repeat  left top / 100px,
+		url("../img/smile.webp") no-repeat  right top / 100px,
+		url("../img/smile.webp") no-repeat  right bottom / 100px,
+		url("../img/smile.webp") no-repeat  left bottom / 100px,
+		linear-gradient(90deg, rgba(239,242,12,1) 0%, rgba(0,21,247,1) 30%, rgba(3,24,250,1) 70%, rgba(239,242,12,1) 100%);
+}
+
+.block03 {
+	padding-top: 225px;
+	min-height: 500px;
+	background: url("../img/office.jpg") center / cover no-repeat;
+}
+
+.link-block {
+	display: block;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 15px 20px;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 25px;
+	background-color: rgba(255, 255, 255, 0.794);
+}
+
+/* Consulting Website Template - Welcome */
+.welcome {
+	max-width: 704px;
+	margin: 0 auto 50px;
+	padding: 0 15px;
+	font-family: "Inter", sans-serif;
+	font-size: 18px;
+	line-height: 1.46; /* 26.31/18 */
+}
+
+.welcome-top {
+	max-width: 420px;
+	margin-bottom: 20px;
+}
+
+.welcome-lable {
+	margin-bottom: 16px;
+	padding-left: 18px;
+	color: #37393F;
+	font-weight: 500;
+	text-transform: capitalize;
+	line-height: 1.22; /* 22/18 */
+	background: url("../img/square.svg") 0 5px / 12px 12px no-repeat;
+}
+
+.welcome-title {
+	color: #37393F;
+	font-size: 40px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	line-height: 1.21; /* 48.40/40 */
+	text-transform: capitalize;
+}
+
+.welcome-text {
+	margin-bottom: 20px;
+	color: #7D7D7D;
+}
+
+.welcome-text p {
+	margin-bottom: 15px;
+}
+
+.welcome-text .last {
+	margin-bottom: 0;
+}
+
+.welcome-content {
+	max-width: 613px;
+}
+
+.welcome-list {
+	margin-bottom: 43px;
+	color: #37393F;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.65; /* 33/20 */
+}
+
+.list-item {
+	margin-bottom: 23px;
+	padding-left: 35px;
+	background: url("../img/welcome/vector.svg") 0 3px no-repeat;
+}
+
+.list-item.last {
+	margin-bottom: 0;
+}
+
+.welcome-info {
+	margin-bottom: 37px;
+}
+
+.info-item {
+	display: inline-block;
+	padding: 32px;
+	margin-right: 21px;
+	max-width: 293px;
+	border: 1px solid  #E3E3E3;
+}
+
+.info-contetn {
+	padding-left: 58px;
+}
+
+.info-contetn-experience {
+	background: url("../img/welcome/icon01.svg") 0 0 / 39px no-repeat;
+}
+
+.info-contetn-awards {
+	background: url("../img/welcome/icon02.svg") 0 0 / 39px no-repeat;
+}
+
+.info-title {
+	color: #37393F;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+}
+
+.info-text {
+	color: #7D7D7D;
+	font-size: 16px;
+	line-height: 1.35; /* 21.63/16 */
+}
+
+.info-item.last{
+	margin-right: 0;
+}
+
+.welcome-button {
+	display: inline-block;
+	padding: 22px 27px;
+	color: #fff;
+	font-weight: 600;
+	line-height: 1.22; /* 22/18 */
+	text-transform: capitalize;
+	background-color: #6B77E5;
+}
+
+/* Consulting Website Template - Lates Project */
+.last-ptoject {
+	max-width: 1250px;
+	padding: 0 15px;
+	margin: 0 auto 50px;
+	font-family: "Inter", sans-serif;
+	font-size: 18px;
+	line-height: 1.46; /* 26.31/18 */
+	color: #7D7D7D;
+}
+
+.last-ptoject-top {
+	max-width: 852px;
+	margin: 0 auto 47px;
+	text-align: center;
+}
+
+.last-ptoject-lable {
+	display: inline-block;
+	margin-bottom: 14px;
+	padding-left: 18px;
+	font-weight: 500;
+	line-height: 1.22; /* 22/18 */
+	background: url("../img/square.svg") 0 5px / 12px 12px no-repeat;
+}
+
+.last-project-title {
+	margin-bottom: 14px;
+	color: #37393F;
+	font-size: 40px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	line-height: 1.21; /* 48.40/40 */
+}
+
+.top {
+	margin-bottom: 58px;
+}
+
+.last-project-card {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.last-project-img {
+	min-width: 380px;
+	min-height: 501px;
+	margin-bottom: 24px;
+}
+
+.last-project-card.last {
+	margin-right: 0;
+}
+
+.img-financal {
+	background: url("../img/last-project/01.jpg") no-repeat;
+}
+
+.img-marketing {
+	background: url("../img/last-project/02.jpg") no-repeat;
+}
+
+.img-busines {
+	background: url("../img/last-project/03.jpg") no-repeat;
+}
+
+.img-investmen {
+	background: url("../img/last-project/04.jpg") no-repeat;
+}
+
+.img-development {
+	background: url("../img/last-project/05.jpg") no-repeat;
+}
+
+.img-fin-inv {
+	background: url("../img/last-project/06.jpg") no-repeat;
+}
+
+.last-project-sub-title {
+	color: #37393F;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	line-height: 1.27; /* 25.4/20 */
+	margin-bottom: 10px;
+}
+
+.last-project-date {
+	padding-left: 25px;
+	color: #7D7D7D;
+	font-size: 14px;
+	font-weight: 400;
+	background: url("../img/last-project/date.svg") 0 0 / 22px no-repeat;
+}
+
+/* Euphoria Ecommerce - Clothing for Women Online in India */
+.women-clonthing {
+	max-width: 1250px;
+	margin: 0 auto 50px;
+	padding: 0 15px;
+	font-family: "Causten";
+	color: #807D7E;
+	font-size: 20px;
+	letter-spacing: 0.40px;
+}
+
+.women-clonthing-title {
+	display: inline-block;
+	padding-left: 21px;
+	margin-bottom: 30px;
+	font-family: "Core Sans C";
+	color: #3C4242;
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2; /* 33.50/28 */
+	letter-spacing: 0.56px;
+	background: url("../img/euphoria/line.svg") 0 3px / 6px 28px no-repeat;
+}
+
+.women-clonthing-contern {
+	padding-left: 21px;
+}
+
+.women-clothing-info {
+	margin-bottom: 25px;
+}
+
+.women-clothing-info.last {
+	margin-bottom: 20px;
+}
+
+.women-clothing-sub-title {
+	margin-bottom: 25px;
+	font-size: 20px;
+	font-family: "Core Sans C";
+	font-weight: 600;
+	line-height: 1.68; /* 33.50/20 */
+}
+
+.women-clothing-text {
+	line-height: 1.68;
+}
+
+.women-clothing-text span{
+	font-weight: 700;
+	line-height: 1.68;
+}
+
+.women-clothing-text p{
+	margin-bottom: 20px;
+}
+
+.women-clothing-text .last{
+	margin-bottom: 0;
+}
+
+.women-clothing-more {
+	display: inline-block;
+	font-family: Core Sans C;
+	font-weight: 600;
+	line-height: 1.68; /* 33.5/20 */
+}
+
+/* Euphoria Ecommerce - WE MADE YOUR EVERYDAY FASHION BETTER! */
+.fashion {
+	max-width: 1270px;
+	margin: 0 auto;
+	padding: 0 15px;
+	font-family: "Causten";
+	font-size: 0;
+	font-weight: 300;
+	letter-spacing: 1px;
+	border-radius: 10px;
+}
+
+.fashion-first {
+	display: inline-block;
+	width: 49.43%; /* 613px/1240 */
+	min-height: 640px;
+	padding: 183px 74px 174px;
+	background: url("../img/fashion/first.png") center / cover no-repeat;
+}
+
+.fasion-title {
+	margin-bottom: 30px;
+	font-size: 34px;
+	font-family: "Core Sans C";
+	font-weight: 800;
+	color: #fff;
+	line-height: 1.47; /* 50/34 */
+	letter-spacing: 0.21px;
+}
+
+.fashion-text {
+	margin-bottom: 50px;
+	font-size: 20px;
+	color: #ffffffb6;
+	font-weight: 300;
+	line-height: 1.2; 
+}
+
+.fashion-button {
+	padding: 12px 44px;
+	background-color: #ffffff;
+	color: #3C4242;
+	font-size: 18px;
+	font-family: "Causten";
+	font-weight: 600;
+	border-radius: 8px;
+}
+
+.fashion-second {
+	display: inline-block;
+	vertical-align: top;
+	width: 50.49%; /* 626/1240 */
+	min-height: 640px;
+	background: url("../img/fashion/second.png") center / cover no-repeat;
+}
+
+/* FOOTER */
+.footer {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.footer-link {
+	display: inline-block;
+	min-width: 100px;
+	padding: 15px;
+	border: 4px solid orange;
+	border-radius: 15px;
+	font-size: 20px;
+	text-align: center;
+	color: orange;
+	font-weight: 700;
+	background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 28%, rgba(0,212,255,1) 100%);
+}
