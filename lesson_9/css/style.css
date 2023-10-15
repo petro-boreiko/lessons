@@ -1,0 +1,754 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+   font-family: "Inter", sans-serif;
+   font-size: 18px;
+   color: #7d7d7d;
+}
+
+[class*="-title"] {
+   font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+.header {
+   padding-top: 30px;
+   margin-bottom: 30px;
+}
+
+.header-title {
+   font-size: 40px;
+   color: black;
+   text-align: center;
+   font-weight: 700;
+   line-height: 1.5;
+}
+
+/* MAIN */
+.main > *:not(:last-child) {
+   margin-bottom: 50px;
+}
+
+/* Working with pseudo-classes and pseudo-elaments */
+.example {
+   max-width: 1130px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+.example > *:not(:last-child) {
+   margin-bottom: 20px;
+}
+
+.example-title {
+   width: max-content;
+   margin: 0 auto;
+   padding: 5px;
+   font-size: 30px;
+   color: black;
+   text-align: center;
+   font-weight: 700;
+}
+
+.button-state {
+   border: 3px solid rgba(37, 171, 201, 0.792);
+   padding: 20px;
+   background-color: #21e15e79;
+}
+
+.button-state-title {
+   font-size: 25px;
+   color: rgba(37, 171, 201, 0.792);
+   margin-bottom: 15px;
+}
+
+.button-states .hov::before,
+.button-states .act::before,
+.button-states .vis::before,
+.button-states .foc::before,
+.button-states .tar::before {
+   content: "Click me!";
+   display: inline-block;
+   text-align: center;
+   width: 100px;
+   border: 2px solid rgba(37, 171, 201, 0.792);
+   border-radius: 5px;
+   padding: 5px;
+   color: rgb(24, 123, 238);
+   font-weight: 600;
+}
+
+.button-state .hov:hover::before,
+.button-state .act:hover::before,
+.button-state .vis:hover::before,
+.button-state .foc:hover::before,
+.button-state .tar:hover::before {
+   background-color: #fff;
+}
+
+.button-state .hov:hover::before {
+   content: "Hover";
+}
+
+.button-state .act:hover::before {
+   content: "Active";
+}
+
+.button-state .vis:hover::before {
+   content: "Visited";
+}
+
+.button-state .foc:hover::before {
+   content: "Focus";
+}
+
+.button-state .tar:hover::before {
+   content: "Target";
+}
+
+.button-state .hov:visited::before,
+.button-state .act:visited::before,
+.button-state .vis:visited::before,
+.button-state .foc:visited::before,
+.button-state .tar:visited::before {
+   color: #5a53c6;
+   background-color: #abc19e;
+}
+
+.button-state .hov:focus::before,
+.button-state .act:focus::before,
+.button-state .vis:focus::before,
+.button-state .foc:focus::before,
+.button-state .tar:focus::before {
+   border: 2px solid #fff;
+   background-color: #5a53c6;
+   color: #fff;
+}
+
+.button-state .act:active::before {
+   background-color: #a5ab04;
+}
+
+.example-list {
+   padding: 20px;
+   border: 3px solid #5a53c6;
+   background-color: #5bc0c7;
+}
+
+.example-list:target {
+   background-color: #e9993d;
+}
+
+.example-list:hover {
+   background-color: #e9e03d;
+}
+
+.example-list li {
+   color: #5a53c6;
+}
+
+.example-list li:nth-child(odd) {
+   background-color: rgba(116, 183, 109, 0.584);
+}
+
+.example-list li:nth-child(2n) {
+   background-color: rgba(154, 66, 143, 0.584);
+}
+
+.example-list li:not(:last-child) {
+   margin-bottom: 10px;
+}
+
+.exm-img {
+   display: inline-block;
+   width: 100%;
+   height: 500px;
+   background: url("../img/example/02.webp") center / 33% 100% no-repeat;
+}
+
+.exm-img::before,
+.exm-img::after {
+   display: inline-block;
+   content: "";
+   width: 33%;
+   height: 100%;
+}
+
+.exm-img::before {
+   background: url("../img/example/01.avif") center / cover no-repeat;
+}
+
+.exm-img::after {
+   margin-left: 34%;
+   background: url("../img/example/03.jpg") center / cover no-repeat;
+}
+
+.example-text p {
+   margin-bottom: 10px;
+   background-color: rgba(225, 112, 55, 0.235);
+}
+
+.example-text::before,
+.example-text::after {
+   display: block;
+}
+
+.example-text::before {
+   content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste eveniet quisquam error in minus architecto ea, voluptatem quod eius, neque facilis corporis, est pariatur et. Sunt rem adipisci expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste eveniet quisquam error in minus architecto ea, voluptatem quod eius, neque facilis corporis, est pariatur et. Sunt rem adipisci expedita?";
+   margin-bottom: 10px;
+   background-color: #20c7bfb1;
+}
+
+.example-text::after {
+   content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste eveniet quisquam error in minus architecto ea, voluptatem quod eius, neque facilis corporis, est pariatur et. Sunt rem adipisci expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste eveniet quisquam error in minus architecto ea, voluptatem quod eius, neque facilis corporis, est pariatur et. Sunt rem adipisci expedita?";
+   background-color: #d52e8a63;
+}
+
+/* The game */
+.my-game {
+   max-width: 830px;
+   margin: 0 auto;
+   padding: 15px;
+   font-size: 0;
+}
+
+.my-game > *:not(:last-child) {
+   margin-bottom: 20px;
+}
+
+.game-link {
+   width: 80px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: #a39a9a4a;
+   font-size: 20px;
+   font-weight: 600;
+   text-align: center;
+   box-shadow: 2px 2px 2px 2px rgb(28, 27, 27);
+}
+
+.game-link:hover {
+   background-color: #b8767698;
+}
+
+.my-game-contetn {
+   padding: 15px;
+   border: 3px solid #1a0cdc7a;
+   background-color: #6c0de974;
+}
+
+.my-game-contetn:hover {
+   background-color: rgba(226, 250, 10, 0.468);
+}
+
+.my-game-contetn div:not(:last-child) {
+   background-color: rgba(43, 214, 24, 0.631);
+}
+
+[class*="element-"] {
+   visibility: hidden;
+}
+
+.element-1 {
+   width: 20px;
+   height: 40px;
+   font-size: 14px;
+   text-align: center;
+   font-weight: 700;
+   padding-top: 5px;
+   color: #fff;
+   border-radius: 4px 4px 0 0;
+}
+
+.element-1:target {
+   visibility: visible;
+}
+
+.element-2 {
+   width: 100%;
+   height: 20px;
+   border-radius: 0 4px 0 4px;
+}
+
+.element-1:hover ~ .element-2,
+.element-2:hover {
+   visibility: visible;
+}
+
+.element-3 {
+   width: 15px;
+   height: 40px;
+   margin-left: 749px;
+}
+
+.element-2:hover ~ .element-3,
+.element-3:hover {
+   visibility: visible;
+}
+
+.element-4 {
+   width: 299px;
+   height: 20px;
+   margin-left: 465px;
+   border-radius: 4px 0 4px 0;
+}
+
+.element-3:hover ~ .element-4,
+.element-4:hover {
+   visibility: visible;
+}
+
+.element-5 {
+   width: 25px;
+   height: 45px;
+   margin-left: 465px;
+}
+
+.element-4:hover ~ .element-5,
+.element-5:hover {
+   visibility: visible;
+}
+
+.element-6 {
+   width: 490px;
+   height: 20px;
+   border-radius: 4px 0 4px 0;
+}
+
+.element-5:hover ~ .element-6,
+.element-6:hover {
+   visibility: visible;
+}
+
+.element-7 {
+   background: linear-gradient(
+      0deg,
+      rgba(239, 12, 76, 1) 0%,
+      rgba(43, 214, 24, 0.631) 100%
+   );
+   height: 100px;
+   width: 10px;
+}
+
+.element-6:hover ~ .element-7,
+.element-7:hover {
+   visibility: visible;
+}
+
+.element-8 {
+   width: 20px;
+   padding: 3px 0;
+   font-size: 15px;
+   font-weight: 700;
+   color: #fff;
+   text-align: center;
+   background-color: #ef0c4c;
+   border-radius: 0 4px 4px 4px;
+}
+
+.element-7:hover ~ .element-8,
+.element-8:hover {
+   visibility: visible;
+}
+
+/* Consulting Website: Benefits */
+.benefits {
+   max-width: 722px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.benefits > *:not(:last-child) {
+   margin-bottom: 42px;
+}
+
+[class*="-title"] {
+   color: #37393f;
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+}
+
+.benefits-title {
+   font-size: 30px;
+   line-height: 1.27; /* 38.1/30 */
+}
+
+.benefits-title:not(:last-child) {
+   margin-bottom: 12px;
+}
+
+.benefits-text {
+   line-height: 1.46; /* 26.31/18 */
+}
+
+.benefits-sub-title {
+   color: #6b77e5;
+   font-size: 20px;
+   line-height: 1.27; /* 25.4/20 */
+}
+
+.benefits-sub-title:not(:last-child) {
+   margin-bottom: 12px;
+}
+
+.benefits-main {
+   font-size: 0;
+}
+
+.benefits .benefits-main {
+   margin-bottom: 48px;
+}
+
+.benefits-img {
+   display: inline-block;
+   margin-right: 4.19%; /* 29/692 */
+   width: 47.83%; /* 331/692 */
+   vertical-align: top;
+}
+
+.benefits-img img {
+   width: 100%;
+}
+
+.benefits-main-content {
+   display: inline-block;
+   width: 47.98%; /* 332/692 */
+}
+
+.benefits-main-title {
+   font-size: 25px;
+   line-height: 1.27; /* 31.75/25 */
+}
+
+.benefits-main-title:not(:last-child) {
+   margin-bottom: 15px;
+}
+
+.benefits-main-sub-title {
+   color: #40ddb6;
+   font-size: 20px;
+   line-height: 1.27; /* 25.4/20 */
+}
+
+.benefits-main-list {
+   font-size: 18px;
+   line-height: 1.22; /* 22/18 */
+}
+
+.benefits-main-sub-title:not(:last-child) {
+   margin-bottom: 21px;
+}
+
+.benefits-main-list li:not(:last-child) {
+   margin-bottom: 30px;
+}
+
+.benefits-main-list li::before {
+   display: inline-block;
+   margin-right: 8px;
+   vertical-align: middle;
+   content: "";
+   width: 27px;
+   height: 27px;
+   background: url("../img/benefits/vector.svg") center / contain no-repeat;
+}
+
+/* Consulting Website: We Care About Your Business Plan */
+.we-care {
+   max-width: 703px;
+   padding: 15px;
+   margin: 0 auto;
+}
+
+.we-care > *:not(:last-child) {
+   margin-bottom: 48px;
+}
+
+.we-care-lable {
+   font-weight: 500;
+   line-height: 1.22; /* 22/18 */
+}
+
+.we-care-lable:not(:last-child) {
+   margin-bottom: 16px;
+}
+
+.we-care-lable::before {
+   display: inline-block;
+   margin-right: 6px;
+   content: "";
+   width: 12px;
+   height: 12px;
+   background-color: #40ddb6;
+}
+
+.we-care-title {
+   max-width: 413px;
+   font-size: 40px;
+   font-weight: 700;
+   line-height: 1.21; /* 48.4/40 */
+}
+
+.we-care-title:not(:last-child) {
+   margin-bottom: 10px;
+}
+
+.we-care-text {
+   line-height: 1.46; /* 26.31/18 */
+}
+
+.we-care-text p:not(:last-child) {
+   margin-bottom: 30px;
+}
+
+.we-care-main > *:not(:last-child) {
+   margin-bottom: 31px;
+}
+
+.we-care-main:not(:last-child) {
+   margin-bottom: 31px;
+}
+
+.we-care-main-item {
+   padding: 28px 38px;
+   border: 1px #e3e3e3 solid;
+}
+
+.we-care-main-content {
+   background: url("../img/benefits/vector.svg") 0 2px / 27px 27px no-repeat;
+   padding-left: 46px;
+}
+
+.we-care-main-title {
+   font-size: 20px;
+   line-height: 1.5; /* 30/20 */
+}
+
+.we-care-main-title:not(:last-child) {
+   margin-bottom: 12px;
+}
+
+.we-care-main-text {
+   line-height: 1.46; /* 26.31/18 */
+   text-align: justify;
+}
+
+.we-care-button {
+   padding: 22px 35px;
+   font-weight: 600;
+   text-transform: capitalize;
+   background-color: #6b77e5;
+   border: 2px solid #6b77e5;
+   color: #fff;
+   line-height: 1.22; /* 22/18 */
+}
+
+.we-care-button:hover {
+   background-color: #fff;
+   color: #6b77e5;
+}
+
+/* Consulting Website: How We Work */
+.we-work {
+   max-width: 1250px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+.we-work-top {
+   margin-bottom: 41px;
+   text-align: center;
+}
+
+.we-work .we-care-title {
+   max-width: 100%;
+}
+
+.we-work-cards {
+   font-size: 0;
+   padding-top: 36px;
+}
+
+.we-work-cards > *:not(:last-child) {
+   margin-right: 31px;
+}
+
+.we-work-card {
+   padding: 58px 43px;
+   display: inline-block;
+   width: 31.64%; /* 386/1220 */
+   background-color: #f4f4f4;
+}
+
+.we-work-content {
+   padding: 0 5px;
+   text-align: center;
+}
+
+.we-work-card::before {
+   content: "";
+   display: block;
+   margin: -94px auto 22px;
+   width: 72px;
+   height: 72px;
+   border-radius: 50%;
+}
+
+.we-work-card:nth-child(1)::before {
+   background: url("../img/we-work/01.svg") center / contain no-repeat;
+}
+
+.we-work-card:nth-child(2)::before {
+   background: url("../img/we-work/02.svg") center / contain no-repeat;
+}
+
+.we-work-card:nth-child(3)::before {
+   background: url("../img/we-work/03.svg") center / contain no-repeat;
+}
+
+.we-work-sub-title {
+   font-size: 25px;
+   line-height: 1.27; /* 31.75/25 */
+}
+
+.we-work-sub-title:not(:last-child) {
+   margin-bottom: 16px;
+}
+
+.we-work-text {
+   font-size: 18px;
+   line-height: 1.46; /* 26.31/18 */
+}
+
+.we-work-text:not(:last-child) {
+   margin-bottom: 37px;
+}
+
+.we-work-info {
+   font-size: 18px;
+   color: #6b77e5;
+   font-weight: 600;
+   line-height: 1.22; /* 22/18 */
+   text-transform: capitalize;
+}
+
+.we-work-info:hover {
+   text-decoration: underline;
+}
+
+/* Jewellery: We Develop Create Custom Jewels */
+.jewels {
+   max-width: 1244px;
+   padding: 0 15px;
+   margin: 0 auto;
+   font-family: "Cormorant Infant";
+   font-size: 0;
+   color: black;
+}
+
+.jewels-titl1 {
+   display: inline-block;
+   padding-top: 150px;
+   margin-right: 3px;
+   vertical-align: top;
+   max-width: 488px;
+   font-size: 60px;
+   line-height: 1.15; /* 69/60 */
+}
+
+.jewels-titl1::after {
+   content: "";
+   display: block;
+   width: 62.295082%; /* 304/488 */
+   height: 3px; /* 304/1214 */
+   margin-top: 13px;
+   background-color: #78473b;
+}
+
+.jewels-content {
+   display: inline-block;
+}
+
+.jewels-item:not(:last-child) {
+   padding-top: 32px;
+   margin-right: 45px;
+}
+
+.jewels-item {
+   vertical-align: top;
+   display: inline-block;
+   max-width: 334px;
+}
+
+.jewels-info {
+   font-size: 46px;
+   line-height: 1.13; /* 51.98/46 */
+}
+
+.jewels-info:not(:last-child) {
+   margin-bottom: 31px;
+}
+
+.jewels-card:hover {
+   transform: scale(1.02);
+}
+
+.jewels-img {
+   border: 1px black solid;
+}
+
+.jewels-img:not(:last-child) {
+   margin-bottom: 34px;
+}
+
+.jewels-img img {
+   width: 100%;
+   max-height: 381px;
+   margin-bottom: -10px;
+   padding-top: 10px;
+   margin-left: 10px;
+}
+
+.jewels-card-info {
+   font-size: 24px;
+   line-height: 1.4;
+}
+
+.jewels-card-info-sub-titl1:not(:last-child) {
+   margin-bottom: 4px;
+}
+
+/* FOOTER */
+.footer {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding-bottom: 30px;
+}
+
+.footer-link {
+   display: inline-block;
+   min-width: 100px;
+   padding: 15px;
+   border: 4px solid orange;
+   border-radius: 15px;
+   font-size: 20px;
+   text-align: center;
+   color: orange;
+   font-weight: 700;
+   background-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 28%,
+      rgba(0, 212, 255, 1) 100%
+   );
+}
+
+.footer-link:hover {
+   background-image: linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 1) 0%,
+      rgba(9, 9, 121, 1) 28%,
+      rgba(2, 0, 36, 1) 100%
+   );
+}
