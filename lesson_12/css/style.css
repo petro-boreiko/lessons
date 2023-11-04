@@ -88,7 +88,7 @@ body {
    padding: 5px;
    background-color: rgba(10, 17, 227, 0.995);
    color: aliceblue;
-	position: relative;
+   position: relative;
 }
 
 .sub-menu__item:first-child {
