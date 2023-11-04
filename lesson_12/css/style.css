@@ -88,6 +88,7 @@ body {
    padding: 5px;
    background-color: rgba(10, 17, 227, 0.995);
    color: aliceblue;
+	position: relative;
 }
 
 .sub-menu__item:first-child {
@@ -118,10 +119,10 @@ body {
 
 .next-sub-menu {
    width: 100%;
-   position: absolute;
    padding: 10px 10px;
    border-radius: 25px;
-   top: 10px;
+   position: absolute;
+   top: -8px;
    left: 100%;
    visibility: hidden;
 }
