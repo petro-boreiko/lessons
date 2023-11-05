@@ -350,7 +350,6 @@ body {
    position: absolute;
    bottom: 22px;
    left: 22px;
-   z-index: 3;
 }
 
 .cards-main__name {
