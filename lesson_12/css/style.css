@@ -215,12 +215,12 @@ body {
    margin-left: 600px;
 }
 
-.sticky-main__element:not(:last-child) {
+.sticky-main__text:not(:last-child) {
    margin-bottom: 15px;
 }
 
-.sticky-main__text:not(:last-child) {
-   margin-bottom: 15px;
+.sticky-main__text {
+   margin-top: 15px;
 }
 
 /* !ABSOLUTE */
@@ -295,7 +295,6 @@ body {
    position: absolute;
    top: 0;
    left: 0;
-   z-index: 2;
    visibility: hidden;
 }
 
@@ -310,14 +309,13 @@ body {
 
 .cards-main__img img {
    width: 100%;
-   height: 532px;
+   min-height: 532px;
 }
 
 .cards-main__social {
    position: absolute;
    top: 243px;
    left: 107px;
-   z-index: 3;
    visibility: hidden;
 }
 
