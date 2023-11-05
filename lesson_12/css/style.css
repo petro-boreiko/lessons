@@ -279,14 +279,18 @@ body {
    margin-bottom: 31px;
 }
 
-.cards-main__item {
-   position: relative;
+.cards-main__item:not(:last-child) {
+   margin-right: 31px;
+}
+
+.item-card {
+	position: relative;
    display: inline-block;
    max-width: 386px;
    overflow: hidden;
 }
 
-.cards-main__item::before {
+.item-card::before {
    content: "";
    display: inline-block;
    width: 100%;
@@ -298,21 +302,17 @@ body {
    visibility: hidden;
 }
 
-.cards-main__item:hover .cards-main__social,
-.cards-main__item:hover::before {
+.item-card:hover .social,
+.item-card:hover::before {
    visibility: visible;
 }
 
-.cards-main__item:not(:last-child) {
-   margin-right: 31px;
-}
-
-.cards-main__img img {
+.item-card__img img {
    width: 100%;
    min-height: 532px;
 }
 
-.cards-main__social {
+.item-card__social {
    position: absolute;
    top: 243px;
    left: 107px;
@@ -341,7 +341,7 @@ body {
    transform: scale(1.04);
 }
 
-.cards-main__body {
+.item-card__body {
    max-width: 341px;
    padding: 24px 10px;
    text-align: center;
@@ -352,19 +352,19 @@ body {
    left: 22px;
 }
 
-.cards-main__name {
+.item-card__name {
    color: #37393f;
    font-size: 25px;
    font-family: "Poppins";
    line-height: 1.52;
 }
 
-.cards-main__name:not(:last-child),
-.cards-main__position:not(:last-child) {
+.item-card__name:not(:last-child),
+.item-card__position:not(:last-child) {
    margin-bottom: 4px;
 }
 
-.cards-main__position {
+.item-card__position {
    color: #7d7d7d;
    font-size: 18px;
    line-height: 1.33;
