@@ -454,7 +454,7 @@ body {
    transform: translate(20px, 30px);
 }
 
-.practice__element--translate2d:hover {
+.practice__item:hover .practice__element--translate2d {
    transform: translate(0);
 }
 
@@ -462,7 +462,7 @@ body {
    transform: scale(1.1);
 }
 
-.practice__element--scale2d:hover {
+.practice__item:hover .practice__element--scale2d {
    transform: scale(1);
 }
 
@@ -470,7 +470,7 @@ body {
    transform: rotate(45deg);
 }
 
-.practice__element--rotate2d:hover {
+.practice__item:hover .practice__element--rotate2d {
    transform: rotate(0);
 }
 
@@ -478,7 +478,7 @@ body {
    transform: skew(-25deg);
 }
 
-.practice__element--skew2d:hover {
+.practice__item:hover  .practice__element--skew2d {
    transform: skew(0);
 }
 
@@ -487,7 +487,7 @@ body {
    transform: translate(10px, 10px) scale(1.1) rotate(25deg) skew(-15deg);
 }
 
-.practice__element--mix2d:hover {
+.practice__item:hover .practice__element--mix2d {
    transform: translate(0);
 }
 
@@ -501,7 +501,7 @@ body {
    transform: translate3d(-10px, -10px, -100px);
 }
 
-.practice__element--translate3d:hover {
+.practice__item:hover .practice__element--translate3d {
    transform: translate3d(0, 0, 0);
 }
 
@@ -509,7 +509,7 @@ body {
    transform: scale3d(0.9, 0.9, 1.5);
 }
 
-.practice__element--scale3d:hover {
+.practice__item:hover .practice__element--scale3d {
    transform: scale3d(1, 1, 1);
 }
 
@@ -517,7 +517,7 @@ body {
    transform: rotate3d(1.9, 1.6, 1.9, -60deg);
 }
 
-.practice__element--rotate3d:hover {
+.practice__item:hover .practice__element--rotate3d {
    transform: rotate3D(1, 1, 1, 60deg);
 }
 
@@ -527,7 +527,7 @@ body {
       rotate3d(1.5, 1.5, 1.4, 200deg);
 }
 
-.practice__element--mix3d:hover {
+.practice__item:hover .practice__element--mix3d {
    transform: translate(0);
 }
 
