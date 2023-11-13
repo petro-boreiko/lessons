@@ -1,0 +1,157 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+   background-color: #120a8f;
+}
+
+.wrapper {
+   overflow: clip;
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+}
+
+[class*="__container"] {
+   max-width: 1250px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+.homework {
+   height: 500px;
+   width: 1000px;
+   margin: auto;
+   background: url("../img/sky-night-moon.jpg") center / cover;
+   position: relative;
+   overflow-x: hidden;
+}
+
+.homework__road {
+   height: 90px;
+   width: 600%;
+   background-image: url("../img/images.jpg");
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   animation: road 5s linear infinite;
+}
+
+@keyframes road {
+   100% {
+      transform: translateX(-1000px);
+   }
+}
+
+.homework__city {
+   height: 230px;
+   width: 500%;
+   background: url("../img/city3.png") center / contain repeat-x;
+   position: absolute;
+   bottom: 90px;
+   left: 0;
+   right: 0;
+   z-index: 2;
+   animation: city 15s linear infinite;
+}
+
+@keyframes city {
+   100% {
+      transform: translateX(-1000px);
+   }
+}
+
+.homework__car {
+   width: 400px;
+   position: absolute;
+   left: 50%;
+   bottom: 40px;
+   transform: translateX(-50%) rotateY(180deg);
+   z-index: 3;
+}
+
+.homework__car img {
+   width: 100%;
+   animation: car 1s linear infinite;
+}
+
+@keyframes car {
+   0% {
+      transform: translateY(-1px);
+   }
+   50% {
+      transform: translateY(1px);
+   }
+   100% {
+      transform: translateY(-1px);
+   }
+}
+
+.homework__wheels {
+   left: 50%;
+   bottom: 94px;
+   transform: translateX(-50%);
+   position: absolute;
+   z-index: 3;
+}
+
+.homework__wheel {
+   position: absolute;
+   width: 76px;
+   animation: wheel 1s linear infinite;
+}
+
+.homework__wheel--back {
+   left: -144px;
+}
+
+.homework__wheel--front {
+   width: 74px;
+   left: 82px;
+}
+
+@keyframes wheel {
+   0% {
+      transform: rotate(0deg);
+   }
+   0% {
+      transform: rotate(360deg);
+   }
+}
+
+.homework__driver {
+   position: absolute;
+   z-index: 2;
+   bottom: 105px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 43px;
+}
+
+.homework__driver img {
+   width: 100%;
+	transform: scale(1.15);
+}
+
+.homework__driver::before {
+   padding: 5px;
+   content: "Hello guys";
+   font-weight: 700;
+   font-size: 14px;
+   text-align: center;
+   width: 60px;
+   height: 40px;
+   background-color: #fff;
+   border-radius: 100% 100% 100% 0% / 98% 100% 91% 94%;
+   position: absolute;
+   top: -50px;
+   left: 50px;
+   opacity: 0;
+   animation: text 3s linear 1 2s forwards;
+}
+
+@keyframes text {
+   100% {
+      opacity: 1;
+   }
+}
