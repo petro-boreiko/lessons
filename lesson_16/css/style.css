@@ -366,6 +366,10 @@ select.form-info__input {
    margin-bottom: 30px;
 }
 
+.item-pay__radio {
+	position: relative;
+}
+
 .item-pay__radio--price {
    display: flex;
    justify-content: space-between;
