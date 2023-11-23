@@ -263,7 +263,7 @@ select.form-info__input {
    max-width: 802px;
 }
 
-.check-out__for:not(:last-child) {
+.check-out__form:not(:last-child) {
    margin-bottom: 30px;
 }
 
@@ -302,122 +302,142 @@ select.form-info__input {
    }
 }
 
-/* ?Check out shipping */
-.shipping-check__item--margin {
+
+/* ?Form pay */
+.form-pay {
+   max-width: 804px;
+   margin: 0 auto;
+}
+
+.form-pay__items:not(:last-child) {
    margin-bottom: 50px;
 }
 
-.item-shipping:not(:last-of-type) {
+.form-pay__item:not(:last-child) {
    margin-bottom: 30px;
-   padding-bottom: 30px;
    border-bottom: 1px solid #edeef2;
+   padding-bottom: 30px;
 }
 
-.item-shipping__top:not(:last-child) {
+.form-pay__top:not(:last-child) {
    margin-bottom: 30px;
 }
 
-.item-shipping__title:not(:last-child) {
+.form-pay__title {
+   font-size: 22px;
+   font-family: "Core Sans C";
+   line-height: 1.41;
+   letter-spacing: 0.44px;
+}
+
+.form-pay__title:not(:last-child) {
    margin-bottom: 8px;
 }
 
-.item-shipping__info {
+.form-pay__text {
    font-size: 16px;
    font-weight: 400;
    line-height: 1.19;
 }
 
-.item-shipping__body {
-   padding: 40px 28px;
-   background-color: rgba(246, 246, 246, 1);
+.bottom-pay {
+   padding: 45px 48px 45px 28px;
    border-radius: 12px;
+   background-color: rgba(246, 246, 246, 1);
 }
 
-.body-item {
+.bottom-pay__item:not(:last-child) {
+   margin-bottom: 30px;
+}
+
+.item-pay {
    font-size: 20px;
    font-weight: 700;
    line-height: 1.2;
 }
 
-.body-item__content:not(:last-child) {
-   padding-bottom: 25px;
-   margin-bottom: 25px;
+.item-pay:not(:last-child) {
+   padding-bottom: 30px;
+
    border-bottom: 2px solid rgba(190, 188, 189, 1);
 }
 
-.body-item__content {
-   position: relative;
+.item-pay__radio:not(:last-child) {
+   margin-bottom: 30px;
 }
 
-.body-item__input {
+.item-pay__radio--price {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   column-gap: 20px;
+}
+
+.item-pay__input {
    position: absolute;
    top: 0;
    left: 0;
+   opacity: 0;
    width: 0;
    height: 0;
-   opacity: 0;
 }
 
-.body-item__lable {
-   display: inline-flex;
-   align-items: center;
-   gap: 19px;
+.item-pay__input:checked + .item-pay__lable::after {
+   visibility: visible;
+}
+
+.item-pay__lable {
+   padding-left: 37px;
+   display: flex;
+   row-gap: 5px;
+   flex-direction: column;
+   position: relative;
    cursor: pointer;
 }
 
-.body-item__lable::before {
+.item-pay__lable span {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 1.19;
+}
+
+.item-pay__lable::before {
    content: "";
    width: 18px;
    height: 18px;
-   flex: 0 0 18px;
-   border: 1px solid #3c4242;
    border-radius: 50%;
+   border: 1px solid #3c4242;
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
 }
 
-.body-item__input:focus-visible + .body-item__lable {
-   outline: 1px solid #000;
+.item-pay__lable--none.item-pay__lable::before,
+.item-pay__lable--none.item-pay__lable::after {
+   display: none;
 }
 
-.body-item__input:checked + .body-item__lable::before {
-   background: url("../img/radio_button.svg") center no-repeat;
+.item-pay__lable--none.item-pay__lable {
+   padding-left: 0;
 }
 
-.body-item__wrapper {
-   display: flex;
-   justify-content: space-between;
-   gap: 15px;
+.item-pay__lable::after {
+   content: "";
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: rgba(128, 125, 126, 1);
+   position: absolute;
+   left: 4px;
+   top: 50%;
+   transform: translateY(-50%);
+   visibility: hidden;
 }
 
-.body-item__charges:not(:last-child) {
-   margin-bottom: 8px;
-}
-
-.body-item__text {
-   color: #807d7e;
-   font-size: 16px;
-   line-height: 1.19;
-   font-weight: 500;
-}
-
-.body-item__price {
-   align-items: flex-start;
-}
-
-.body-item__information label:not(:last-child) {
-   margin-bottom: 8px;
-}
-
-.body-item__top:not(:last-child) {
-   margin-bottom: 30px;
-}
-
-.body-item__bottom {
+.item-pay__card {
    max-width: 704px;
-   margin: 0 auto;
-}
-
-.card-pay__links:not(:last-child) {
-   margin-bottom: 30px;
+   padding-left: 37px;
 }
 
 .card-pay__links {
@@ -426,9 +446,14 @@ select.form-info__input {
    gap: 20px;
 }
 
+.card-pay__links:not(:last-child) {
+   margin-bottom: 30px;
+}
+
 .card-pay__link {
    width: 80px;
    height: 46px;
+   flex: 0 0 80px;
    overflow: hidden;
 }
 
@@ -438,48 +463,50 @@ select.form-info__input {
 }
 
 .card-pay__link img:hover {
-   transform: scale(1.05);
+   transform: scale(1.15);
 }
 
-.card-pay__wrapper {
+.card-pay__inputs {
    display: flex;
    flex-wrap: wrap;
-   margin: 0 -15px;
    row-gap: 26px;
+   margin: 0 -15px;
 }
 
 .card-pay__column {
-   flex: 1 1 50%;
    padding: 0 15px;
-   min-width: 290px;
+   flex: 1 1 50%;
+   position: relative;
 }
 
 .card-pay__input {
+   width: 100%;
    padding: 0 20px;
    height: 53px;
-   width: 100%;
-   background-color: transparent;
    border-radius: 8px;
-   border: 1px #3c4242 solid;
+   background-color: transparent;
+   border: 2px solid #807d7e;
 }
 
 .card-pay__input::placeholder {
    color: #807d7e;
    font-size: 14px;
    font-weight: 400;
-   transition: box-shadow 0.3s;
-}
-
-.card-pay__input:hover {
-   box-shadow: 2px 2px 2px #000;
+   transition: opacity 0.3s;
 }
 
 .card-pay__input:focus::placeholder {
    opacity: 0;
 }
 
-.card-pay__input--password::placeholder {
-   background: url("../img/card-pay/eye.svg") 99.7% no-repeat;
+.card-pay__eye {
+   position: absolute;
+   transform: translateY(-50%);
+   top: 50%;
+   right: 30px;
+   width: 20px;
+   height: 20px;
+   background: url("../img/card-pay/eye.svg") center no-repeat;
 }
 
 /* !FOOTER */
@@ -487,6 +514,8 @@ select.form-info__input {
    text-align: center;
    padding: 15px 0;
    font-size: 25px;
-	font-family: "Core Sans C";
+   font-family: "Core Sans C";
 }
+
+/* ----------------------- */
 
