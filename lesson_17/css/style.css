@@ -459,6 +459,7 @@
 
 .best-seller__container {
    max-width: 1197px;
+
 }
 
 .best-seller__title {
@@ -496,7 +497,8 @@
 
 .content-items__item {
    display: flex;
-   flex-direction: column;
+   flex-direction: column;   position: relative;
+   z-index: 1;
 }
 
 .content-items__img {
@@ -548,6 +550,7 @@
 }
 
 .content-items__link::after {
+   cursor: pointer;
    content: "";
    align-self: start;
    width: 100%;
