@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:800&display=swap");
+
+/* Causten */
+@font-face {
+   font-family: "Causten";
+   src: url("../fonts/causten/Causten-Regular.woff2") format("woff2"),
+      url("../fonts/causten/Causten-Regular.woff") format("woff");
+   font-display: swap;
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Causten";
+   src: url("../fonts/causten/Causten-Medium.woff2") format("woff2"),
+      url("../fonts/causten/Causten-Medium.woff") format("woff");
+   font-display: swap;
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Causten";
+   src: url("../fonts/causten/Causten-Semi-Bold.woff2") format("woff2"),
+      url("../fonts/causten/Causten-Semi-Bold.woff") format("woff");
+   font-display: swap;
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Causten";
+   src: url("../fonts/causten/Causten-Bold.woff2") format("woff2"),
+      url("../fonts/causten/Causten-Bold.woff") format("woff");
+   font-display: swap;
+   font-weight: 700;
+   font-style: normal;
+}
+
+/* Core Sans C */
+@font-face {
+   font-family: "Core Sans C";
+   src: url("../fonts/core_sans_c/CoreSansC-55Medium.woff2") format("woff2"),
+      url("../fonts/core_sans_c/CoreSansC-55Medium.woff") format("woff");
+   font-display: swap;
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Core Sans C";
+   src: url("../fonts/core_sans_c/CoreSansC-65Bold.woff2") format("woff2"),
+      url("../fonts/core_sans_c/CoreSansC-65Bold.woff") format("woff");
+   font-display: swap;
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Core Sans C";
+   src: url("../fonts/core_sans_c/CoreSansC-75ExtraBold.woff2") format("woff2"),
+      url("../fonts/core_sans_c/CoreSansC-75ExtraBold.woff") format("woff");
+   font-display: swap;
+   font-weight: 800;
+   font-style: normal;
+}
