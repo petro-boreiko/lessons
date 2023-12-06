@@ -1,0 +1,20 @@
+.main-title {
+   color: #3c4242;
+   font-size: 34px;
+   font-family: "Core Sans C";
+   font-weight: 600;
+   line-height: 0.99;
+   letter-spacing: 0.68px;
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+
+.main-title::before {
+	display: inline-block;
+   content: "";
+   height: 30px;
+   width: 6px;
+   border-radius: 10px;
+   background-color: rgba(138, 51, 253, 1);
+}
