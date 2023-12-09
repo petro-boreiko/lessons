@@ -6,15 +6,81 @@
    line-height: 0.99;
    letter-spacing: 0.68px;
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    gap: 20px;
+   position: relative;
 }
 
 .main-title::before {
-	display: inline-block;
+   flex: 0 0 6px;
+   display: inline-block;
    content: "";
    height: 30px;
    width: 6px;
    border-radius: 10px;
    background-color: rgba(138, 51, 253, 1);
+   position: relative;
+   top: 2px;
+}
+
+@media (max-width: 757px) {
+   .main-title {
+      font-size: 28px;
+      gap: 10px;
+   }
+
+   .main-title::before {
+      height: 24px;
+   }
+}
+
+/* Button */
+.button {
+   border-radius: 4px;
+   padding: 10px 24px;
+   color: #3c4242;
+   font-size: 12px;
+   font-family: "Causten";
+   font-weight: 500;
+   line-height: 1.17;
+   background-color: transparent;
+   border: 1px #3c4242 solid;
+   text-transform: uppercase;
+   transition: all 0.3s;
+}
+
+@media (any-hover: hover) {
+   .button:hover {
+      color: #fff;
+      background-color: #65c2c2;
+   }
+}
+.button--black {
+   padding: 10px 12px;
+   color: #fff;
+   background-color: #3c4242;
+   font-weight: 700;
+   border: none;
+   text-transform: capitalize;
+}
+
+.button--border {
+   color: #fff;
+   border-color: #fff;
+}
+
+.button--big {
+   padding: 10px 32px;
+   font-weight: 600;
+   border: 2px #3c4242 solid;
+}
+
+.footer {
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.footer__container {
+	text-align: center;
+   font-size: 30px;
 }

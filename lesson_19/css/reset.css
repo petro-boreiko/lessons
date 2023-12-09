@@ -41,3 +41,32 @@ body {
    line-height: 1;
    height: 100%;
 }
+
+/* FORM */
+input,
+button,
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+   line-height: inherit;
+}
+button {
+   color: inherit;
+   background-color: transparent;
+	cursor: pointer;
+	display: inline-block;
+}
+button,
+select,
+option {
+   cursor: pointer;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
