@@ -20,7 +20,7 @@
    border-radius: 10px;
    background-color: rgba(138, 51, 253, 1);
    position: relative;
-   top: 2px;
+   top: 1px;
 }
 
 @media (max-width: 757px) {
