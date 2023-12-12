@@ -1,0 +1,30 @@
+$mainColor: #0e333d;
+
+.button {
+   padding: 12px 29px 14px 26px;
+   background-color: $mainColor;
+   border-radius: 5px;
+   color: #fff;
+   font-size: 20px;
+   font-family: Merriweather;
+   font-weight: 700;
+   transition: background-color 0.3s;
+
+   &--big {
+      font-family: "DM Serif Text";
+      font-weight: 400;
+      padding: 17px 38px;
+      font-size: 28px;
+   }
+
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: #1a6980;
+      }
+   }
+
+   @media (max-width: 540px) {
+      padding: 10px 15px;
+      font-size: 20px;
+   }
+}
