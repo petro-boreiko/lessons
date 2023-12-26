@@ -1,0 +1,15 @@
+.button {
+   display: inline-block;
+   padding: toRem(16) toRem(72);
+   font-family: "Causten";
+   color: $blackColor;
+   font-size: toRem(24);
+   font-weight: 700;
+	line-height: 1.2;
+	border-radius: toRem(8);
+	background-color: $mainColor;
+
+	@media (max-width: $mobile) {
+		padding: toRem(10) toRem(45);
+	}
+}
