@@ -5,18 +5,24 @@
    color: $blackColor;
    font-size: toRem(24);
    font-weight: 700;
-	line-height: 1.2;
-	border-radius: toRem(8);
-	background-color: $mainColor;
-	transition: background-color 0.3s;
+   line-height: 1.2;
+   border-radius: toRem(8);
+   background-color: $mainColor;
+   transition: background-color 0.3s;
 
-	@media (max-width: $mobile) {
-		padding: toRem(10) toRem(45);
-	}
+   @media (max-width: $mobile) {
+      padding: toRem(10) toRem(45);
+   }
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: #e2dddd;
-		}
-	}
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: #e2dddd;
+      }
+   }
+}
+
+%title-footer {
+   @include adaptiveValue("font-size", 28, 30);
+   font-weight: 700;
+   line-height: 2.2;
 }
