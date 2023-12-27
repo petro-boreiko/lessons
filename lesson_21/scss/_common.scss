@@ -8,8 +8,15 @@
 	line-height: 1.2;
 	border-radius: toRem(8);
 	background-color: $mainColor;
+	transition: background-color 0.3s;
 
 	@media (max-width: $mobile) {
 		padding: toRem(10) toRem(45);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #e2dddd;
+		}
 	}
 }
