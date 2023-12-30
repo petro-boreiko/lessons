@@ -52,7 +52,5 @@
 		@include adaptiveValue("height", 30, 26);
 		background-color: $violetColor;
 		border-radius: toRem(10);
-		position: relative;
-		top: toRem(2);
 	}
 }
