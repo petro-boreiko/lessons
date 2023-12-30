@@ -1,4 +1,5 @@
 .button {
+   text-align: center;
    display: inline-block;
    padding: toRem(16) toRem(72);
    font-family: "Causten";
@@ -9,6 +10,12 @@
    border-radius: toRem(8);
    background-color: $mainColor;
    transition: background-color 0.3s;
+
+   @media (max-width: $mobileSmall) {
+      &--width {
+         width: 100%;
+      }
+   }
 
    @media (max-width: $mobile) {
       padding: toRem(10) toRem(45);
@@ -25,4 +32,27 @@
    @include adaptiveValue("font-size", 28, 30);
    font-weight: 700;
    line-height: 2.2;
+}
+
+.title {
+   color: $blackColor;
+   font-family: "Core Sans C";
+	@include adaptiveValue("font-size", 34, 30);
+   font-weight: 600;
+   line-height: 0.98;
+   letter-spacing: toRem(0.68);
+	display: flex;
+	@include adaptiveValue("gap", 20, 12);
+	align-items: flex-start;
+
+	&::before {
+		content: "";
+		flex: 0 0 toRem(6);
+		width: toRem(6);
+		@include adaptiveValue("height", 30, 26);
+		background-color: $violetColor;
+		border-radius: toRem(10);
+		position: relative;
+		top: toRem(2);
+	}
 }

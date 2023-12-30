@@ -36,6 +36,7 @@ body {
    top: 0;
    left: 0;
    z-index: 50;
+   border-bottom: toRem(1) solid rgba(128, 125, 126, 0.482);
 
    // .header__container
    &__container {
@@ -286,16 +287,15 @@ body {
 
 // Page
 .page {
-   display: flex;
-   flex-direction: column;
-   // .page__section
-   &__section {
-   }
+   // & > * {
+   //    @include adaptiveValue("margin-bottom", 100, 30);
+   // }
 }
 
 // Hero section
 .hero {
-   flex-grow: 1;
+   padding-top: toRem(20);
+   padding-bottom: toRem(30);
    position: relative;
    display: flex;
    align-items: center;
@@ -339,8 +339,6 @@ body {
    }
    // .hero__container
    &__container {
-      padding-top: toRem(20);
-      padding-bottom: toRem(30);
       width: 100%;
    }
 
@@ -437,11 +435,229 @@ body {
    }
 }
 
+// Made section
+.made {
+   // .made__container
+   &__container {
+      display: flex;
+      @include adaptiveValue("padding-top", 100, 30);
+      @include adaptiveValue("padding-bottom", 40, 10);
+
+      @media (max-width: $mobile) {
+         flex-direction: column;
+      }
+   }
+   // .made__content
+   &__content {
+      border-radius: toRem(18) 0 0 toRem(18);
+      flex: 0 1 toRem(614);
+      background: url("../img/made/bg-made.webp") 0 0 / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $mobile) {
+         flex-basis: auto;
+         border-radius: toRem(18);
+      }
+   }
+
+   // .made__body
+   &__body {
+      padding: toRem(30);
+      max-width: toRem(526);
+   }
+   // .made__title
+   &__title {
+      @include adaptiveValue("font-size", 34, 25);
+      font-family: "Core Sans C";
+      font-weight: 800;
+      line-height: 1.23;
+      letter-spacing: toRem(0.208);
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 30, 10);
+      }
+   }
+   // .made__text
+   &__text {
+      @include adaptiveValue("font-size", 20, 18);
+      line-height: 1.2;
+      font-weight: 300;
+      letter-spacing: toRem(1);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 50, 20);
+      }
+
+      @media (max-width: $tablet) {
+         letter-spacing: toRem(0.5);
+      }
+   }
+
+   // .made__button
+   &__button {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 30, 10);
+      }
+   }
+
+   // .made__img
+   &__img {
+      display: none;
+
+      @media (min-width: $mobile) {
+         display: block;
+         flex: 0 1 toRem(626);
+         aspect-ratio: 626 / 639;
+
+         img {
+            border-radius: 0 toRem(18) toRem(18) 0;
+
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+}
+
+// Limelight
+.limelight {
+   color: $blackColor;
+   // .limelight__container
+   &__container {
+      @include adaptiveValue("padding-top", 60, 20);
+      @include adaptiveValue("padding-bottom", 50, 15);
+   }
+   // .limelight__title
+   &__title {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 70, 15);
+      }
+   }
+   // .limelight__cards
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+      @include adaptiveValue("column-gap", 36, 10);
+		row-gap: toRem(20);
+   }
+   // .limelight__card
+   &__card {
+      display: flex;
+   }
+}
+
+.card-limelight {
+   display: flex;
+   flex-direction: column;
+
+   // .card-limelight__img
+   &__img {
+      position: relative;
+      aspect-ratio: 282 / 370;
+      overflow: hidden;
+      border-radius: toRem(12);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 30, 10);
+      }
+
+      img {
+         border-radius: toRem(12);
+         width: 100%;
+         height: 100%;
+         transition: transform 0.4s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.02);
+            }
+         }
+      }
+   }
+   // .card-limelight__like
+   &__like {
+      position: absolute;
+      top: toRem(26);
+      right: toRem(20);
+      width: toRem(32);
+      height: toRem(32);
+      background-color: $mainColor;
+      border-radius: 50%;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #c3bacf;
+         }
+      }
+
+      span {
+         display: inline-block;
+         width: 100%;
+         height: 100%;
+         background: url("../img/header/heart.svg") center no-repeat;
+      }
+   }
+   // .card-limelight__contetnt
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      gap: toRem(15);
+      align-items: flex-start;
+   }
+   // .card-limelight__body
+   &__body {
+   }
+   // .card-limelight__title
+   &__title {
+      line-height: 1.18;
+      font-weight: 600;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(5);
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+   // .card-limelight__name
+   &__name {
+      color: $grayColor;
+      font-size: toRem(14);
+      font-weight: 500;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(5);
+      }
+   }
+   // .card-limelight__price
+   &__price {
+		flex: 0 0 auto;
+		padding: toRem(10) toRem(16);
+		background-color: $grizzleColor;
+		border-radius: toRem(8);
+   }
+}
+
 // Footer
 .footer {
    background-color: $blackColor;
    @include adaptiveValue("padding-top", 49, 30);
    @include adaptiveValue("padding-bottom", 49, 30);
+   min-height: calc(100svh - toRem(108));
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   @media (max-width: $tablet) {
+      min-height: calc(100svh - toRem(70));
+   }
    // .footer__container
    &__container {
       color: $grizzleColor;
@@ -450,7 +666,48 @@ body {
    &__top {
       max-width: toRem(1060);
       margin: 0 auto;
-		padding-bottom: toRem(44);
+      @include adaptiveValue("padding-bottom", 44, 20);
+   }
+
+   // .footer__spoiler
+   &__spoiler {
+      position: relative;
+
+      @extend %title-footer;
+      line-height: 2;
+
+      @include adaptiveValue("padding-top", 30, 10);
+      @include adaptiveValue("padding-bottom", 30, 10);
+      @include adaptiveValue("padding-left", 76, 0);
+      border-top: toRem(1) solid rgba(190, 188, 189, 0.4);
+      border-bottom: toRem(1) solid rgba(190, 188, 189, 0.4);
+
+      @media (max-width: $tablet) {
+         line-height: 1.3;
+      }
+
+      &::after {
+         content: "";
+         height: toRem(12);
+         width: toRem(25);
+         background: url("../img/footer/arrow-down.svg") center no-repeat;
+         position: absolute;
+         top: 50%;
+         @include adaptiveValue("right", 32, 0);
+         transform: translate(0, -50%);
+      }
+   }
+   // .footer__bottom
+   &__bottom {
+      @include adaptiveValue("padding-top", 37, 10);
+      @include adaptiveValue("font-size", 18, 16);
+      text-align: center;
+      font-weight: 700;
+      line-height: 2;
+
+      @media (max-width: $tablet) {
+         line-height: 1.5;
+      }
    }
 }
 
@@ -490,7 +747,7 @@ body {
    // .top-footer__list
    &__list {
       & > *:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 5, 10);
+         @include adaptiveValue("margin-bottom", 5, 10);
       }
    }
    // .top-footer__item
@@ -507,11 +764,11 @@ body {
          line-height: 1.5;
       }
 
-		@media (any-hover: hover) {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
    }
    // .top-footer__information
    &__information {
@@ -550,7 +807,7 @@ body {
       align-items: center;
       justify-content: center;
       transition: background-color 0.3s;
-		overflow: hidden;
+      overflow: hidden;
 
       @media (any-hover: hover) {
          &:hover {
@@ -575,9 +832,9 @@ body {
    }
    // .download__links
    &__links {
-		display: flex;
-		justify-content: space-between;
-		@include adaptiveValue("gap", 20, 10);
+      display: flex;
+      justify-content: space-between;
+      @include adaptiveValue("gap", 20, 10);
    }
 
    // .download__link
@@ -587,13 +844,13 @@ body {
       img {
          width: 100%;
          height: 100%;
-			transition: transform 0.3s;
+         transition: transform 0.3s;
 
-			@media (any-hover: hover) {
-				&:hover {
-					transform: scale(1.04)
-				}
-			}
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.04);
+            }
+         }
       }
    }
 }
