@@ -186,23 +186,25 @@ body {
          width: 100%;
          background-color: rgba(246, 246, 246, 1);
          border-radius: toRem(8);
-      }
 
-      &:focus::placeholder {
-         opacity: 0;
-         transition: opacity 0.3s;
-      }
+         &:focus::placeholder {
+            opacity: 0;
+            transition: opacity 0.3s;
+         }
 
-      &::placeholder {
-         color: $grayColor;
-         font-size: toRem(16);
-         line-height: 1.19;
+         &::placeholder {
+            color: $grayColor;
+            font-size: toRem(16);
+            line-height: 1.19;
+         }
       }
    }
    // .search-header__button
    &__button {
+
       @media (max-width: $mobileSmall) {
-         padding: toRem(12);
+         width: toRem(44);
+         height: toRem(44);
          background-color: #f6f6f6;
          border-radius: toRem(8);
          transition: background-color 0.3s;
@@ -258,7 +260,7 @@ body {
       background-color: #f6f6f6;
       border-radius: toRem(8);
       width: toRem(44);
-      height: toRem(44);
+      height: 100%;
       display: block;
       flex: 0 0 toRem(44);
       position: relative;
