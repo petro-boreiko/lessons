@@ -45,6 +45,10 @@
 	@include adaptiveValue("gap", 20, 12);
 	align-items: flex-start;
 
+	&:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 70, 15);
+      }
+
 	&::before {
 		content: "";
 		flex: 0 0 toRem(6);
