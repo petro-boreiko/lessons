@@ -1,0 +1,26 @@
+// Colors
+$mainColor: #fff;
+$colorViolet: #6b77e5;
+$colorGreen: #40ddb6;
+$colorDark: #37393f;
+$colorGray: #7d7d7d;
+
+$headerHeightBig: 132;
+$headerHeightSmall: 70;
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1220;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;

@@ -1,0 +1,427 @@
+@use "sass:math";
+
+@import "_fonts.scss";
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_common.scss";
+
+body {
+   font-family: "Inter";
+}
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+
+   main {
+      flex-grow: 1;
+   }
+}
+
+[class*="__container"] {
+   max-width: #{$containerWidth}px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+// Header
+.header {
+   background-color: $mainColor;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+   border: toRem(1) $colorDark solid;
+
+   // .header__container
+   &__container {
+      padding-top: toRem(5);
+      padding-bottom: toRem(5);
+      min-height: toRem($headerHeightBig);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include adaptiveValue("column-gap", 20, 5);
+
+      @media (max-width: toEm($tablet)) {
+         min-height: toRem($headerHeightSmall);
+      }
+   }
+
+   // .header__logo
+   &__logo {
+      @media (min-width: toEm($mobileSmall)) {
+         flex: 0 0 toRem(200);
+         position: relative;
+         z-index: 5;
+
+         img {
+            max-width: 100%;
+         }
+      }
+
+      @media (max-width: toEm($mobileSmall)) {
+         overflow: hidden;
+         width: toRem(45);
+         position: relative;
+         z-index: 5;
+      }
+   }
+
+   // .header__content
+   &__content {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("column-gap", 40, 15);
+   }
+
+   // .header__button
+   &__button {
+      position: relative;
+      z-index: 5;
+   }
+}
+
+.menu {
+   // .menu__body
+   &__body {
+      @media (max-width: toEm($tablet)) {
+         position: fixed;
+         top: 0;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         background: #8691f6;
+         padding: toRem(90) toRem(15) toRem(30);
+         transition: all 0.3s;
+
+         &::before {
+            content: "";
+            min-height: toRem(70);
+            width: 100%;
+            background-color: #abe9e1;
+            border: toRem(1) $colorDark solid;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 5;
+         }
+      }
+   }
+
+   // .menu__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      @include adaptiveValue("column-gap", 40, 15, 0, $containerWidth, $tablet);
+      row-gap: toRem(10);
+
+      @media (max-width: toEm($tablet)) {
+         flex-direction: column;
+         row-gap: toRem(15);
+         align-items: stretch;
+         text-align: center;
+      }
+   }
+
+   // .menu__item
+   &__item {
+      @media (any-hover: hover) {
+         &:hover .menu__link {
+            text-decoration: underline;
+         }
+      }
+      // .menu__item--parent
+      &--parent {
+         position: relative;
+         display: flex;
+         align-items: center;
+         gap: toRem(4);
+
+         @media (any-hover: hover) {
+            &:hover .sub-menu {
+               transform: translate(0, 0);
+               opacity: 1;
+               visibility: visible;
+               pointer-events: all;
+            }
+
+            &:hover::after {
+               transform: rotate(180deg);
+            }
+         }
+
+         &::after {
+            content: "";
+            flex: 0 0 toRem(10);
+            width: toRem(10);
+            height: toRem(7);
+            background: url("../img/header/sub-menu-arrow.svg") 0 0 no-repeat;
+         }
+      }
+   }
+
+   // .menu__link
+   &__link {
+      color: $colorDark;
+      font-size: toRem(18);
+      line-height: 1.22;
+
+      @media (max-width: toEm($tablet)) {
+         font-size: toRem(28);
+         color: $mainColor;
+         width: 100%;
+         font-weight: 600;
+      }
+   }
+}
+
+.sub-menu {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   padding-top: toRem(5);
+   transform: translate(0, 10%);
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+
+   @media (max-width: toEm($tablet)) {
+      position: relative;
+      transform: translate(0, 0);
+      opacity: 1;
+      visibility: visible;
+   }
+
+   // .sub-menu__list
+   &__list {
+      min-width: toRem(100);
+      background-color: $colorViolet;
+      padding: toRem(10);
+      border-radius: toRem(5);
+
+      @media (max-width: toEm($tablet)) {
+         width: 100%;
+      }
+   }
+
+   // .sub-menu__item
+   &__item {
+      &:not(:last-child) {
+         margin-bottom: toRem(10);
+      }
+   }
+
+   //  .sub-menu__link
+   &__link {
+      font-size: toRem(18);
+      color: $mainColor;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+
+      @media (max-width: toEm($tablet)) {
+         font-size: toRem(22);
+         width: 100%;
+      }
+   }
+}
+
+.icon-menu {
+   display: none;
+
+   @media (max-width: toEm($tablet)) {
+      padding: toRem(5);
+      display: block;
+      width: toRem(40);
+      flex: 0 0 toRem(40);
+      height: toRem(40);
+      position: relative;
+      z-index: 5;
+      background-color: $colorViolet;
+      border-radius: toRem(5);
+
+      &::before,
+      &::after,
+      span {
+         content: "";
+         width: toRem(30);
+         height: toRem(3);
+         position: absolute;
+         left: 50%;
+         transform: translate(-50%, 0);
+         background-color: $mainColor;
+         transition: all 0.3s;
+      }
+
+      &::before {
+         top: toRem(9);
+      }
+
+      &::after {
+         bottom: toRem(8);
+      }
+
+      & span {
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+   }
+}
+
+.menu-open {
+   @media (max-width: toEm($tablet)) {
+      .menu__body {
+         left: 0;
+      }
+
+      .menu__body::before {
+         left: 0;
+      }
+
+      .icon-menu span {
+         opacity: 0;
+      }
+
+      .icon-menu::after {
+         bottom: 50%;
+         transform: translate(-50%, 50%) rotate(45deg);
+      }
+
+      .icon-menu::before {
+         top: 50%;
+         transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      .menu__item--parent::after {
+         display: none;
+      }
+
+      .menu__item--parent {
+         display: block;
+      }
+
+      body {
+         overflow: hidden;
+      }
+   }
+}
+
+// Hero
+.page {
+   // .page__hero
+   &__hero {
+   }
+}
+.hero {
+	overflow: auto;
+   padding-top: toRem($headerHeightBig);
+   width: 100%;
+   height: 100svh;
+   display: flex;
+   flex-direction: column;
+
+   @media (max-width: toEm($tablet)) {
+      padding-top: toRem($headerHeightSmall);
+   }
+
+   // .hero__img
+   &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   // .hero__wrapper
+   &__wrapper {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 4;
+      width: 43.125%;
+      background-color: rgba(55, 57, 63, 0.91);
+
+		@media (max-width: toEm($containerWidth)) {
+			width: 100%;
+			background-color: rgba(55, 57, 63, 0.7);
+		}
+   }
+   // .hero__content
+   &__content {
+      padding:toRem(30) toRem(15);
+      max-width: toRem(560);
+
+		@media (max-width: toEm($containerWidth)) {
+			max-width: toRem(700);
+		}
+   }
+
+   // .hero__actions
+   &__actions {
+      display: flex;
+      align-items: center;
+		column-gap: toRem(30);
+
+		@media (max-width: toEm($mobileSmall)) {
+			flex-direction: column;
+			align-items: flex-start;
+			row-gap: toRem(20);
+		}
+   }
+
+   // .hero__button
+   &__button {
+   }
+
+   // .hero__watch
+   &__watch {
+      color: $mainColor;
+      font-size: toRem(18);
+      font-weight: 600;
+      text-transform: capitalize;
+      line-height: 1.22;
+      display: flex;
+      align-items: center;
+      gap: toRem(10);
+      
+
+      @media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+
+         &:hover::before {
+            background-color: #31bf9b;
+         }
+      }
+
+      &::before {
+         content: "";
+         width: toRem(60);
+         height: toRem(60);
+         background: $colorViolet url("../img/hero/play.svg") toRem(25)
+            toRem(20) / toRem(14) toRem(20) no-repeat;
+         border-radius: 50%;
+         transition: background-color 0.3s;
+      }
+   }
+
+   .block-header {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 35, 15);
+      }
+   }
+}

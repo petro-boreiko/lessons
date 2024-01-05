@@ -1,0 +1,125 @@
+.button {
+   min-width: toRem(185);
+
+   padding: toRem(22) toRem(15);
+   text-align: center;
+   color: $mainColor;
+   font-size: toRem(18);
+   font-weight: 600;
+   line-height: 1.22;
+   text-transform: capitalize;
+   background-color: $colorViolet;
+   transition: all 0.3s;
+
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: $colorGreen;
+         color: $colorDark;
+      }
+   }
+
+   @media (max-width: toEm($tablet)) {
+      min-width: toRem(160);
+      padding: toRem(12) toRem(5);
+      font-size: toRem(16);
+      border-radius: toRem(5);
+   }
+
+   &--bg-green {
+      background-color: $colorGreen;
+      color: $colorDark;
+      transition: all 0.3s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $colorViolet;
+            color: $mainColor;
+         }
+      }
+   }
+}
+
+.block-header {
+   color: $mainColor;
+
+   &--big {
+      .block-header__lable {
+         font-weight: 600;
+         line-height: 1.44;
+
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 16, 8);
+         }
+      }
+
+      .block-header__title {
+         @include adaptiveValue("font-size", 60, 34);
+         line-height: 1.1;
+
+         a {
+            color: $colorGreen;
+
+				@media (any-hover: hover) {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+         }
+      }
+
+      .block-header__text {
+         color: #b9b9b9;
+      }
+   }
+
+   // .block-header__lable
+   &__lable {
+		@include adaptiveValue("font-size", 18, 16);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: toRem(7);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 10, 7);
+      }
+
+      &::before {
+         content: "";
+         flex: 0 0 toRem(12);
+         width: toRem(12);
+         height: toRem(12);
+         background-color: $colorGreen;
+         transform: translate(0, toRem(6));
+      }
+   }
+
+   // .block-header__title
+   &__title {
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 40, 30);
+      font-weight: 700;
+      line-height: 1.2;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+   }
+
+   // .block-header__text
+   &__text {
+      font-size: toRem(18);
+      font-weight: 500;
+      line-height: 1.44;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 16, 8);
+      }
+
+      p {
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 15, 8);
+         }
+      }
+   }
+}
