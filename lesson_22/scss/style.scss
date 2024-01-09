@@ -315,14 +315,18 @@ body {
    }
 }
 
-// Hero
 .page {
    // .page__hero
    &__hero {
    }
+
+   // .page__about-us
+   &__about-us {
+   }
 }
+
+// Hero
 .hero {
-	overflow: auto;
    padding-top: toRem($headerHeightBig);
    width: 100%;
    height: 100svh;
@@ -354,37 +358,37 @@ body {
       width: 43.125%;
       background-color: rgba(55, 57, 63, 0.91);
 
-		@media (max-width: toEm($containerWidth)) {
-			width: 100%;
-			background-color: rgba(55, 57, 63, 0.7);
-		}
+      @media (max-width: toEm($containerWidth)) {
+         width: 100%;
+         background-color: rgba(55, 57, 63, 0.7);
+      }
    }
    // .hero__content
    &__content {
-      padding:toRem(30) toRem(15);
+      padding: toRem(30) toRem(15);
       max-width: toRem(560);
 
-		@media (max-width: toEm($containerWidth)) {
-			max-width: toRem(700);
-		}
+      @media (max-width: toEm($containerWidth)) {
+         max-width: toRem(700);
+      }
    }
 
    // .hero__actions
    &__actions {
       display: flex;
       align-items: center;
-		column-gap: toRem(30);
+      column-gap: toRem(30);
 
-		@media (max-width: toEm($mobileSmall)) {
-			flex-direction: column;
-			align-items: flex-start;
-			row-gap: toRem(20);
-		}
+      @media (max-width: toEm($mobileSmall)) {
+         flex-direction: column;
+         align-items: flex-start;
+         row-gap: toRem(20);
+      }
    }
 
    // .hero__button
-   &__button {
-   }
+   // &__button {
+   // }
 
    // .hero__watch
    &__watch {
@@ -396,12 +400,11 @@ body {
       display: flex;
       align-items: center;
       gap: toRem(10);
-      
 
       @media (any-hover: hover) {
-			&:hover {
-				text-decoration: underline;
-			}
+         &:hover {
+            text-decoration: underline;
+         }
 
          &:hover::before {
             background-color: #31bf9b;
@@ -423,5 +426,297 @@ body {
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 35, 15);
       }
+   }
+}
+
+// About-us
+.about-us {
+   position: relative;
+   @include adaptiveValue("padding-top", 150, 30);
+   @include adaptiveValue("padding-bottom", 150, 30);
+
+   // .about-us__container
+   &__container {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      @include adaptiveValue("column-gap", 69, 20);
+
+      @media (max-width: toEm($tablet)) {
+         flex-direction: column-reverse;
+         row-gap: toRem(20);
+      }
+
+      &::before {
+         content: "";
+         width: 43.125%;
+         height: 100%;
+         background-color: #f4f4f4;
+         position: absolute;
+         top: 0;
+         left: 0;
+
+         @media (max-width: toEm($tablet)) {
+				display: none;
+         }
+         @media (min-width: toEm($containerWidth)) {
+				width: 100%;
+         }
+      }
+   }
+
+   // .about-us__left
+   &__left {
+      flex: 0 1 43.125%;
+      padding-right: 4.262295%;
+
+      @media (max-width: toEm($tablet)) {
+         flex: 0 0 auto;
+         padding-right: 0;
+      }
+
+		@media (min-width: toEm($containerWidth)) {
+				padding-right: 0;
+         }
+   }
+   // .about-us__right
+   &__right {
+      flex: 0 1 toRem(633);
+
+      @media (max-width: toEm($tablet)) {
+         flex: 0 0 auto;
+      }
+
+		@media (min-width: toEm($containerWidth)) {
+				position: relative;z-index: 4;
+         }
+   }
+}
+
+.left-about-us {
+   position: relative;
+
+   @media (max-width: toEm($tablet)) {
+      width: 100%;
+   }
+
+   // .left-about-us__img
+   &__img {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+
+      @media (max-width: toEm($tablet)) {
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+
+         &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: hsla(225, 7%, 23%, 0.729);
+            position: absolute;
+            top: 0;
+            left: 0;
+         }
+      }
+
+      @media (min-width: toEm($tablet)) {
+         aspect-ratio: 408 / 446;
+      }
+
+      img {
+         max-width: 100%;
+         object-fit: cover;
+
+         @media (max-width: toEm($tablet)) {
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+
+   // .left-about-us__body
+   &__body {
+      color: $colorDark;
+
+      @media (max-width: toEm($tablet)) {
+         color: $mainColor;
+         @include adaptiveValue("padding-top", 130, 50);
+         @include adaptiveValue("padding-bottom", 130, 50);
+         padding-left: toRem(10);
+         padding-right: toRem(10);
+         margin: 0 auto;
+
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         position: relative;
+         z-index: 5;
+
+         max-width: toRem(460);
+      }
+   }
+
+   // .left-about-us__title
+   &__title {
+      font-family: "Poppins";
+      font-weight: 600;
+      line-height: 1.2;
+
+      @include adaptiveValue("font-size", 30, 24);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 13, 7);
+      }
+
+      @media (max-width: toEm($tablet)) {
+      }
+   }
+
+   // .left-about-us__text
+   &__text {
+      font-size: toRem(18);
+      line-height: 1.61;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 15, 8);
+      }
+
+      @media (min-width: toEm($tablet)) {
+         color: $colorGray;
+      }
+
+      p {
+         &:not(:last-child) {
+            margin-bottom: toRem(8);
+         }
+      }
+   }
+
+   // .left-about-us__link
+   &__link {
+      font-size: toRem(18);
+      font-weight: 600;
+      line-height: normal;
+      text-transform: capitalize;
+      line-height: 1.22;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(8);
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: toRem(2);
+         }
+      }
+
+      @media (max-width: toEm($tablet)) {
+         color: $mainColor;
+      }
+   }
+}
+
+.right-about-us {
+   // .right-about-us__block
+   &__block {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+
+		& .block-header__title {
+			max-width: toRem(413);
+		}
+   }
+   // .right-about-us__list
+   &__list {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 43, 10);
+      }
+   }
+   // .right-about-us__item
+   &__item {
+      color: $colorDark;
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 20, 18);
+      line-height: 1.65;
+      display: flex;
+      align-items: flex-start;
+      gap: toRem(8);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 23, 8);
+      }
+
+      &::before {
+         content: "";
+         width: toRem(27);
+         height: toRem(27);
+         background-color: $colorViolet;
+         border-radius: 50%;
+         flex: 0 0 toRem(27);
+         column-gap: toRem(8);
+         transform: translateY(toRem(2));
+         background: url("../img/about-us/vector.svg") center / contain
+            no-repeat;
+      }
+   }
+   // .right-about-us__info
+   &__info {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 37, 10);
+      }
+   }
+   // .right-about-us__button
+   &__button {
+   }
+}
+
+.info-items {
+   display: flex;
+   gap: toRem(20);
+
+   @media (max-width: toEm(1080)) {
+      flex-direction: column;
+   }
+   // .info-items__item
+   &__item {
+      @include adaptiveValue("padding", 32, 15);
+      border: toRem(1) solid #e3e3e3;
+
+      display: flex;
+      gap: toRem(19);
+      align-items: flex-start;
+   }
+
+   // .info-items__img
+   &__img {
+      width: toRem(39);
+      height: toRem(39);
+      object-fit: contain;
+   }
+   // .info-items__content
+   &__content {
+      & > *:not(:last-child) {
+         margin-bottom: toRem(3);
+      }
+   }
+   // .info-items__title
+   &__title {
+      color: $colorDark;
+      font-size: toRem(20);
+      font-weight: 600;
+      line-height: 1.5;
+   }
+   // .info-items__text
+   &__text {
+      color: $colorGray;
+      font-size: toRem(16);
+      line-height: 1.37;
    }
 }
