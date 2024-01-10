@@ -43,15 +43,15 @@
    color: #000;
 
    &--big {
-		color: $mainColor;
+      color: $mainColor;
 
       .block-header__lable {
          font-weight: 600;
          line-height: 1.44;
 
-			&::before {
-				transform: translate(0, toRem(6));
-			}
+         &::before {
+            transform: translate(0, toRem(6));
+         }
 
          &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 16, 8);
@@ -65,7 +65,7 @@
          a {
             color: $colorGreen;
             transition: color 0.3s;
-				
+
             @media (any-hover: hover) {
                &:hover {
                   color: $colorViolet;
@@ -79,11 +79,21 @@
       }
    }
 
+   &--center {
+      margin: 0 auto;
+		text-align: center;
+
+      .block-header__lable {
+         justify-content: center;
+      }
+   }
+
    // .block-header__lable
    &__lable {
       @include adaptiveValue("font-size", 18, 16);
       font-weight: 500;
-		line-height: 1.22;
+      line-height: 1.22;
+      text-transform: capitalize;
       display: flex;
       align-items: flex-start;
       gap: toRem(7);
@@ -106,6 +116,7 @@
    &__title {
       font-family: "Poppins";
       @include adaptiveValue("font-size", 40, 30);
+      text-transform: capitalize;
       font-weight: 700;
       line-height: 1.2;
 
@@ -116,7 +127,7 @@
 
    // .block-header__text
    &__text {
-		color: $colorGray;
+      color: $colorGray;
       font-size: toRem(18);
       font-weight: 500;
       line-height: 1.44;

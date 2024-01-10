@@ -323,6 +323,14 @@ body {
    // .page__about-us
    &__about-us {
    }
+
+   // .page__brands
+   &__brands {
+   }
+
+   // .page__services
+   &__services {
+   }
 }
 
 // Hero
@@ -431,6 +439,7 @@ body {
 
 // About-us
 .about-us {
+   background-color: #f4f4f4;
    position: relative;
    @include adaptiveValue("padding-top", 150, 30);
    @include adaptiveValue("padding-bottom", 150, 30);
@@ -440,44 +449,50 @@ body {
       display: flex;
       align-items: start;
       justify-content: space-between;
-      @include adaptiveValue("column-gap", 69, 20);
+      @include adaptiveValue("column-gap", 69, 30, 0, $containerWidth, $tablet);
 
       @media (max-width: toEm($tablet)) {
          flex-direction: column-reverse;
          row-gap: toRem(20);
       }
 
-      &::before {
-         content: "";
-         width: 43.125%;
-         height: 100%;
-         background-color: #f4f4f4;
-         position: absolute;
-         top: 0;
-         left: 0;
+      // &::before {
+      //    content: "";
+      //    min-width: 43.125%;
+      //    height: 100%;
+      //    background-color: #f4f4f4;
+      //    position: absolute;
+      //    top: 0;
+      //    left: 0;
 
-         @media (max-width: toEm($tablet)) {
-				display: none;
-         }
-         @media (min-width: toEm($containerWidth)) {
-				width: 100%;
-         }
-      }
+      //    @media (max-width: toEm($tablet)) {
+      //       width: 100%;
+      //    }
+      //    @media (min-width: toEm($containerWidth)) {
+      //       width: 100%;
+      //    }
+      // }
    }
 
    // .about-us__left
    &__left {
-      flex: 0 1 43.125%;
-      padding-right: 4.262295%;
+      position: relative;
+      z-index: 4;
+      flex: 0 1 toRem(460);
+      @include adaptiveValue(
+         "padding-right",
+         52,
+         0,
+         0,
+         $containerWidth,
+         $tablet
+      );
+      padding-right: toRem(52);
 
       @media (max-width: toEm($tablet)) {
          flex: 0 0 auto;
          padding-right: 0;
       }
-
-		@media (min-width: toEm($containerWidth)) {
-				padding-right: 0;
-         }
    }
    // .about-us__right
    &__right {
@@ -486,10 +501,6 @@ body {
       @media (max-width: toEm($tablet)) {
          flex: 0 0 auto;
       }
-
-		@media (min-width: toEm($containerWidth)) {
-				position: relative;z-index: 4;
-         }
    }
 }
 
@@ -629,9 +640,9 @@ body {
          @include adaptiveValue("margin-bottom", 20, 10);
       }
 
-		& .block-header__title {
-			max-width: toRem(413);
-		}
+      & .block-header__title {
+         max-width: toRem(413);
+      }
    }
    // .right-about-us__list
    &__list {
@@ -718,5 +729,123 @@ body {
       color: $colorGray;
       font-size: toRem(16);
       line-height: 1.37;
+   }
+}
+
+// Brands
+.brands {
+   @include adaptiveValue("padding-top", 100, 30);
+   @include adaptiveValue("padding-bottom", 40, 15);
+   // .brands__container
+   &__container {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(toRem(103), 1fr));
+      @include adaptiveValue("column-gap", 115, 20);
+      row-gap: toRem(20);
+   }
+   // .brands__item
+   &__item {
+      img {
+         max-width: 100%;
+      }
+   }
+}
+
+// Services
+.services {
+   @include adaptiveValue("padding-bottom", 130, 30);
+   @include adaptiveValue("padding-top", 40, 15);
+   // .services__container
+   &__container {
+      .block-header {
+         max-width: toRem(495);
+
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 15);
+         }
+      }
+   }
+   // .services__items
+   &__items {
+   }
+}
+
+.items-services {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(toRem(385), 1fr));
+   @include adaptiveValue("column-gap", 32, 10);
+   @include adaptiveValue("row-gap", 27, 10);
+
+   @media (max-width: toEm(830)) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   @media (max-width: toEm(830)) {
+      grid-template-columns: 1fr;
+   }
+   // .items-services__item
+   &__item {
+      padding: toRem(30);
+      background-color: $colorLight;
+
+      display: flex;
+      justify-content: space-between;
+      gap: toRem(5);
+
+      @media (max-width: toEm($mobileSmall)) {
+         padding: toRem(15);
+      }
+   }
+   // .items-services__content
+   &__content {
+      flex: 0 1 toRem(200);
+   }
+   // .items-services__title
+   &__title {
+      color: $colorDark;
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 25, 20);
+      font-weight: 600;
+      line-height: 1.28;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(27);
+      }
+   }
+   // .items-services__link
+   &__link {
+      color: $colorViolet;
+      font-size: toRem(18);
+      font-weight: 600;
+      line-height: 1.22;
+      text-transform: capitalize;
+   }
+   // .items-services__img
+   &__img {
+      flex: 0 0 toRem(72);
+      width: toRem(72);
+      height: toRem(72);
+      background-color: $colorGreen;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // .items-services__img--violet
+      &--violet {
+         background-color: $colorViolet;
+      }
+
+      img {
+         max-width: 100%;
+         object-fit: cover;
+      }
+   }
+   // .items-services__button
+   &__button {
+      &.button {
+         @include adaptiveValue("font-size", 25, 20);
+         text-transform: capitalize;
+      }
    }
 }
