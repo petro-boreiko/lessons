@@ -37,7 +37,7 @@ function getList(amountLi = 1) {
       if (bodyList) {
          // Створюємо цикл для створення потрібної кількості елементів в списку
          for (let i = 1; i <= amountLi; ++i) {
-            const addItemToList = bodyList.insertAdjacentHTML(
+            bodyList.insertAdjacentHTML(
                "afterbegin",
                `<li class = "list__item"></li>`
             );
