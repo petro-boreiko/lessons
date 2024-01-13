@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@import "_fonts.scss";
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_common.scss";
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+
+   main {
+      flex-grow: 1;
+   }
+}
+
+[class*="__container"] {
+   max-width: #{$containerWidth}px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
