@@ -36,10 +36,10 @@ function getList(amountLi = 1) {
       //Перевіряємо чи наш список на наявність
       if (bodyList) {
          // Створюємо цикл для створення потрібної кількості елементів в списку
-         for (let i = 1; i <= amountLi; ++i) {
+         for (let i = 0; i < amountLi; ++i) {
             bodyList.insertAdjacentHTML(
                "afterbegin",
-               `<li class = "list__item"></li>`
+               `<li class = "list__item">Item №${amountLi - i}</li>`
             );
          }
       }
@@ -47,7 +47,7 @@ function getList(amountLi = 1) {
       return console.log(bodyList);
    }
 
-   // ! Цей код для тих хто хче заморочитися
+   // ! Цей код для тих хто хoче заморочитися
    // if (bodyElement) {
    // Створюємо перевірку для bodyElement
    // Створюємо список "ul"
