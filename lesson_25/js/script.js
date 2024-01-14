@@ -145,12 +145,16 @@ buttonElement.style.cssText = `
 
 // Створюємо функцію, яка дозволить прокручувати до нашого елемента
 function scrollToBlock(element) {
-   // До елемента застосовуємо функцію scrollIntoView
-   element.scrollIntoView({
-      block: "center",
-      inline: "nearest",
-      behavior: "smooth",
-   });
+
+	// Робимо перевірку
+   if (element) {
+      // До елемента застосовуємо функцію scrollIntoView
+      element.scrollIntoView({
+         block: "center",
+         inline: "nearest",
+         behavior: "smooth",
+      });
+   }
 }
 
 // Оголошуємо нашу функцію
