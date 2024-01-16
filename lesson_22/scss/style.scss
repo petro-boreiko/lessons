@@ -439,7 +439,7 @@ body {
 
 // About-us
 .about-us {
-   background-color: #f4f4f4;
+   // background-color: #f4f4f4;
    position: relative;
    @include adaptiveValue("padding-top", 150, 30);
    @include adaptiveValue("padding-bottom", 150, 30);
@@ -448,36 +448,18 @@ body {
    &__container {
       display: flex;
       align-items: start;
-      justify-content: space-between;
-      @include adaptiveValue("column-gap", 69, 30, 0, $containerWidth, $tablet);
+      // justify-content: space-between;
 
       @media (max-width: toEm($tablet)) {
          flex-direction: column-reverse;
          row-gap: toRem(20);
       }
-
-      // &::before {
-      //    content: "";
-      //    min-width: 43.125%;
-      //    height: 100%;
-      //    background-color: #f4f4f4;
-      //    position: absolute;
-      //    top: 0;
-      //    left: 0;
-
-      //    @media (max-width: toEm($tablet)) {
-      //       width: 100%;
-      //    }
-      //    @media (min-width: toEm($containerWidth)) {
-      //       width: 100%;
-      //    }
-      // }
    }
 
    // .about-us__left
    &__left {
-      position: relative;
-      z-index: 4;
+      // position: relative;
+      // z-index: 4;
       flex: 0 1 toRem(460);
       @include adaptiveValue(
          "padding-right",
@@ -493,10 +475,27 @@ body {
          flex: 0 0 auto;
          padding-right: 0;
       }
+
+      @media (min-width: toEm($tablet)) {
+         &::before {
+            content: "";
+            min-width: 43.125%;
+            height: 100%;
+            background-color: #f4f4f4;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+         }
+      }
    }
    // .about-us__right
    &__right {
-      flex: 0 1 toRem(633);
+      position: relative;
+      z-index: 3;
+      flex: 0 1 toRem(702);
+      @include adaptiveValue("padding-left", 69, 20);
+      padding-right: inherit;
 
       @media (max-width: toEm($tablet)) {
          flex: 0 0 auto;
@@ -505,9 +504,8 @@ body {
 }
 
 .left-about-us {
-   position: relative;
-
    @media (max-width: toEm($tablet)) {
+      position: relative;
       width: 100%;
    }
 
