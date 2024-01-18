@@ -5,42 +5,119 @@ icon.addEventListener("click", function () {
    document.documentElement.classList.toggle("menu-open");
 });
 
-let myAge = 18;
-console.log("Hello");
-console.log(myAge);
+// !Висота ширина вюпорта + скрол
+// const windowWidth = window.innerWidth;
+// console.log(windowWidth);
 
-const petroBoreiko = {
-   age: 28,
-   firstName: "Petro",
-   lastName: "Boreiko",
-};
-console.log("My age: " + petroBoreiko.age);
+// const windowHeight = window.innerHeight;
+// console.log(windowHeight);
 
-console.log(petroBoreiko.age);
+// !BOM
+// ? Navigator
+// Дані про браузер
+// Перевірка який в нас браузер
+// if (navigator.userAgent.includes("Chrome")) {
+//    console.log("Brouser Chrome");
+// } else if (navigator.userAgent.includes("Firefox")) {
+//    console.log("Brouser Firefox");
+// }
 
-const user = [28, "Petro", "Boreiko"];
+// ? Platforms
+// console.log(navigator.userAgentData.platform);
 
-console.log(user[2]);
+// ? Location
+// Отримує адресний рядок
+// console.log(location.href);
+// Перенаправлення користувача
+// location.href += '#popup';
 
-const admin = "Petro Boreiko";
+// ? Alert
+// alert("Hello");
 
-console.log(petroBoreiko);
-console.log(user);
+// ? Confirm
+// let confirmAnswer = confirm('Question?');
+// console.log(confirmAnswer ? 'yes' : 'no');
 
-const info = `name: ${petroBoreiko.firstName}, age: ${petroBoreiko.age}`;
-console.log(info);
+// ? Prompt
+// let promtAnswer = prompt("Question?");
+// console.log(promtAnswer);
 
-console.log(petroBoreiko.firstName.length);
-console.log(petroBoreiko.firstName[3]);
-console.log(petroBoreiko.firstName.toLowerCase())
-console.log(petroBoreiko.firstName.toUpperCase())
-console.log(petroBoreiko.firstName.includes('or'));
-console.log(petroBoreiko.firstName.replace('o', 1));
+// if (promtAnswer === null) {
+// 	console.log("Cancel");
+// } else if(promtAnswer) {
+// 	console.log(`Answer the question user: "${promtAnswer}"`);
+// } else {
+// 	console.log('User not answer the question');
+// }
 
-let number = '12';
-console.log(typeof number)
-console.log(typeof +number)
-console.log(+number)
-console.log(number)
+// !DOM
+// ? Звернення до HTML
+// const htmlElement = document.documentElement;
+// console.log(htmlElement);
 
+// ? Звернення до HEADE
+// const headElement = document.head;
+// console.log(headElement);
 
+// ? Звернення до BODY
+const bodyElement = document.body;
+// console.log(bodyElement);
+
+// ? Перший та останній дочірній елемент
+// const firstChild = bodyElement.firstElementChild;
+// console.log(firstChild);
+// const lastChild = bodyElement.lastElementChild;
+// console.log(lastChild);
+
+// ? Отримання усіх дочірних елементів(колекція)
+// const childNodes = bodyElement.children;
+// console.log(childNodes);
+
+// for (const item of childNodes) {
+// 	console.log(item.children);
+// }
+
+// ? Отримання попереднього елементу перед даним елементом
+// const previousSibling = bodyElement.previousElementSibling;
+// console.log(previousSibling);
+
+// ? Отримання наступного елементу після даного ел
+// const nextSibling = bodyElement.nextElementSiblingElementSibling;
+// console.log(nextSibling);
+
+// ? Пошук та отримання будь якого елементу
+// ? Отримання оного першого знайденог елемента
+// const liElement = document.querySelector('li')
+// console.log(liElement);
+
+// ? Отримання всіх знайдених елементів(колекції)
+// const liElements = document.querySelectorAll("li");
+// console.log(liElements);
+
+// if (liElements.length) {
+// 	liElements.forEach(item => {
+// 		console.log(item);
+// 	});
+// }
+
+// const classElement = document.querySelector('.menu');
+// console.log(classElement);
+// if (classElement) {
+// 	console.log('yes');
+// }
+// const classElement1 = document.querySelectorAll('.menu .menu__body');
+// console.log(classElement1);
+// if (classElement1.length) {
+// 	console.log('yes');
+// }
+
+// ? Отримання батьківського елементу
+// const parentElement = bodyElement.parentElement;
+// console.log(parentElement);
+
+// ? Closes - перевірка наявності батьківського елемента 
+// const parentElement3 = bodyElement.closest('body');
+// console.log(parentElement3);
+
+// const parentElement4 = bodyElement.closest('html');
+// console.log(parentElement4);
