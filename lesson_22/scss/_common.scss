@@ -25,9 +25,13 @@
       border-radius: toRem(5);
    }
 
+   &--color-dark {
+      color: $colorDark;
+   }
+
    &--bg-green {
       background-color: $colorGreen;
-      color: $colorDark;
+      color: $mainColor;
       transition: all 0.3s;
 
       @media (any-hover: hover) {
@@ -81,7 +85,7 @@
 
    &--center {
       margin: 0 auto;
-		text-align: center;
+      text-align: center;
 
       .block-header__lable {
          justify-content: center;
