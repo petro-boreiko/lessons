@@ -920,6 +920,7 @@ body {
 }
 
 .about-us {
+  background-color: #f4f4f4;
   position: relative;
 }
 @media (min-width: 78.125em) {
@@ -1019,21 +1020,7 @@ body {
     padding-right: 0;
   }
 }
-@media (min-width: 61.99875em) {
-  .about-us__left::before {
-    content: "";
-    min-width: 43.125%;
-    height: 100%;
-    background-color: #f4f4f4;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-  }
-}
 .about-us__right {
-  position: relative;
-  z-index: 3;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 43.875rem;
           flex: 0 1 43.875rem;
@@ -1066,6 +1053,7 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
+    padding: 0;
   }
 }
 
@@ -1452,7 +1440,26 @@ body {
   display: flex;
   gap: 1.25rem;
 }
-@media (max-width: 67.5em) {
+@media (max-width: 71.875em) {
+  .info-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 61.99875em) {
+  .info-items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (max-width: 47.99875em) {
   .info-items {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1937,6 +1944,19 @@ body {
 .our-project__button {
   -ms-flex-item-align: center;
       align-self: center;
+}
+@media (max-width: 47.99875em) {
+  .transfer-element .our-project__button {
+    display: block;
+    max-width: 10rem;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 29.99875em) {
+  .transfer-element .our-project__button {
+    max-width: 100%;
+    margin: 0 0.9375rem;
+  }
 }
 .our-project__wrapper {
   padding-right: 0.9375rem;

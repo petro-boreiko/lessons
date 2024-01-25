@@ -444,7 +444,7 @@ body {
 
 // About-us
 .about-us {
-   // background-color: #f4f4f4;
+   background-color: #f4f4f4;
    position: relative;
    @include adaptiveValue("padding-top", 150, 30);
    @include adaptiveValue("padding-bottom", 150, 30);
@@ -481,29 +481,29 @@ body {
          padding-right: 0;
       }
 
-      @media (min-width: toEm($tablet)) {
-         &::before {
-            content: "";
-            min-width: 43.125%;
-            height: 100%;
-            background-color: #f4f4f4;
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-         }
-      }
+      // @media (min-width: toEm($tablet)) {
+      //    &::before {
+      //       content: "";
+      //       min-width: 43.125%;
+      //       height: 100%;
+      //       background-color: #f4f4f4;
+      //       position: absolute;
+      //       z-index: -1;
+      //       top: 0;
+      //       left: 0;
+      //    }
+      // }
    }
    // .about-us__right
    &__right {
-      position: relative;
-      z-index: 3;
       flex: 0 1 toRem(702);
       @include adaptiveValue("padding-left", 69, 20);
       padding-right: inherit;
 
       @media (max-width: toEm($tablet)) {
          flex: 0 0 auto;
+
+			padding: 0;
       }
    }
 }
@@ -695,7 +695,16 @@ body {
    display: flex;
    gap: toRem(20);
 
-   @media (max-width: toEm(1080)) {
+   @media (max-width: toEm(1150)) {
+      flex-direction: column;
+   }
+
+   @media (max-width: toEm($tablet)) {
+      flex-direction: row;
+		justify-content: space-between;
+   }
+
+   @media (max-width: toEm($mobile)) {
       flex-direction: column;
    }
    // .info-items__item
@@ -859,8 +868,6 @@ body {
    }
 }
 
-// ------------------------------------------------------
-
 // Our project
 .our-project {
    @include adaptiveValue("padding-bottom", 130, 15);
@@ -888,6 +895,19 @@ body {
    // .our-project__button
    &__button {
       align-self: center;
+
+      .transfer-element & {
+         @media (max-width: toEm($mobile)) {
+            display: block;
+            max-width: toRem(160);
+            margin: 0 auto;
+         }
+
+         @media (max-width: toEm($mobileSmall)) {
+            max-width: 100%;
+            margin: 0 toRem(15);
+         }
+      }
    }
 
    // .our-project__wrapper
