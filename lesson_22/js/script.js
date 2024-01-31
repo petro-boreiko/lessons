@@ -20,26 +20,6 @@ function clickEvents(e) {
    }
 }
 
-window.addEventListener("resize", function () {
-   transferElement(
-      ".our-project__button", // element
-      ".our-project__container", // originalParent
-      ".our-project", // newParent
-      767.98, // sizeToTransfer
-      "beforeend", // placeOriginalParent
-      "beforeend" //placeNewParent
-   );
-
-   transferElement(
-      ".news__button", // element
-      ".news__header", // originalParent
-      ".news__items", // newParent
-      991.98, // sizeToTransfer
-      "beforeend", // placeOriginalParent
-      "beforeend" //placeNewParent
-   );
-});
-
 // Функція для переносу елементу
 function transferElement(
    element, // Наш елемент
@@ -47,7 +27,8 @@ function transferElement(
    newParent, // Новий батько елемента
    sizeToTransfer, // Розмір вюпорта де відбуваються зміни
    placeOriginalParent, // Місце в функції "insertAdjacentElement"
-   placeNewParent // Місце в функції "insertAdjacentElement"
+   placeNewParent, // Місце в функції "insertAdjacentElement"
+	classAdd // Кдас який додається для стилізації
 ) {
    // Наш елемент
    const elementDoc = document.querySelector(element);
@@ -66,30 +47,44 @@ function transferElement(
          // то наш елемент переноситься в нове місце
          newParentEl.insertAdjacentElement(placeNewParent, elementDoc);
          // І добавляємо класс до HTML для стилізації
-         htmlElement.classList.add("transfer-element");
+         htmlElement.classList.add(classAdd);
       }
    } else {
       //  Якщо HTML має даний клас то...
-      if (htmlElement.classList.contains("transfer-element")) {
+      if (htmlElement.classList.contains(classAdd)) {
          // Наш елемент переносимо на старе місце
          originalParentEl.insertAdjacentElement(
             placeOriginalParent,
             elementDoc
          );
          // І удаляємо клас з HTML
-         htmlElement.classList.remove("transfer-element");
+         htmlElement.classList.remove(classAdd);
       }
    }
 }
 
-// transferElement(
-//    ".our-project__button", // element
-//    ".our-project__container", // originalParent
-//    ".our-project", // newParent
-//    767.98, // sizeToTransfer
-//    "beforeend", // placeOriginalParent
-//    "beforeend" //placeNewParent
-// );
+window.addEventListener("resize", function () {
+   transferElement(
+      ".our-project__button", // element
+      ".our-project__container", // originalParent
+      ".our-project", // newParent
+      767.98, // sizeToTransfer
+      "beforeend", // placeOriginalParent
+      "beforeend", //placeNewParent
+		"transfer-our-project" // classAdd
+   );
+
+   transferElement(
+      ".news__button", // element
+      ".news__header", // originalParent
+      ".news__items", // newParent
+      991.98, // sizeToTransfer
+      "beforeend", // placeOriginalParent
+      "beforeend", //placeNewParent
+		"transfer-news" // classAdd
+   );
+});
+
 
 function counter(element) {
    let minValue = 0;

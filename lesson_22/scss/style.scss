@@ -908,7 +908,7 @@ body {
    &__button {
       align-self: center;
 
-      .transfer-element & {
+      .transfer-our-project & {
          @media (max-width: toEm($mobile)) {
             display: block;
             max-width: toRem(160);
@@ -1389,7 +1389,7 @@ body {
          margin-top: toRem(10);
       }
 
-      .transfer-element & {
+      .transfer-news & {
 
          @media (max-width: toEm($mobileSmall)) {
             display: block;

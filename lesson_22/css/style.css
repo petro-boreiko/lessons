@@ -1957,14 +1957,14 @@ body {
       align-self: center;
 }
 @media (max-width: 47.99875em) {
-  .transfer-element .our-project__button {
+  .transfer-our-project .our-project__button {
     display: block;
     max-width: 10rem;
     margin: 0 auto;
   }
 }
 @media (max-width: 29.99875em) {
-  .transfer-element .our-project__button {
+  .transfer-our-project .our-project__button {
     max-width: 100%;
     margin: 0 0.9375rem;
   }
@@ -3275,7 +3275,7 @@ body {
   }
 }
 @media (max-width: 29.99875em) {
-  .transfer-element .news__button {
+  .transfer-news .news__button {
     display: block;
     width: 100%;
   }
