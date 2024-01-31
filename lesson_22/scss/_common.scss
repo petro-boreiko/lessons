@@ -92,6 +92,10 @@
       }
    }
 
+	&--white {
+		color: $mainColor;
+	}
+
    // .block-header__lable
    &__lable {
       @include adaptiveValue("font-size", 18, 16);
@@ -139,6 +143,10 @@
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 16, 8);
       }
+
+		&--white {
+			color: $mainColor;
+		}
 
       p {
          &:not(:last-child) {

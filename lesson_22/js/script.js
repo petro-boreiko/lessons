@@ -1,9 +1,24 @@
 "use strict";
 
-const icon = document.querySelector(".icon-menu");
-icon.addEventListener("click", function () {
-   document.documentElement.classList.toggle("menu-open");
-});
+document.addEventListener("click", clickEvents);
+
+function clickEvents(e) {
+   const targetElement = e.target;
+
+   if (targetElement.closest(".icon-menu")) {
+      document.documentElement.classList.toggle("menu-open");
+   }
+
+   if (targetElement.closest(".form-book__item--date")) {
+      const inputBoxDate = document.querySelector(".form-book__item--date");
+      inputBoxDate.classList.add("date");
+   }
+
+   if (targetElement.closest(".form-book__item--time")) {
+      const inputBoxDate = document.querySelector(".form-book__item--time");
+      inputBoxDate.classList.add("time");
+   }
+}
 
 window.addEventListener("resize", function () {
    transferElement(
@@ -58,11 +73,37 @@ function transferElement(
    }
 }
 
- transferElement(
-    ".our-project__button", // element
-    ".our-project__container", // originalParent
-    ".our-project", // newParent
-    767.98, // sizeToTransfer
-    "beforeend", // placeOriginalParent
-    "beforeend" //placeNewParent
- );
+transferElement(
+   ".our-project__button", // element
+   ".our-project__container", // originalParent
+   ".our-project", // newParent
+   767.98, // sizeToTransfer
+   "beforeend", // placeOriginalParent
+   "beforeend" //placeNewParent
+);
+
+function counter(element) {
+   let minValue = 0;
+   const delay = parseInt(element.dataset.delay);
+   const maxValue = parseInt(element.dataset.maxValue);
+   const intervalElement = setInterval(() => {
+      element.textContent = minValue;
+      if (minValue === maxValue) {
+         clearInterval(intervalElement);
+      } else {
+         minValue++;
+         console.log(minValue);
+      }
+   }, delay);
+}
+
+const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+         counter(entry.target);
+         observer.unobserve(entry.target);
+      }
+   });
+});
+const itemElement = document.querySelector(".expierience-info__number");
+observer.observe(itemElement);

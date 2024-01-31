@@ -335,6 +335,14 @@ body {
    // .page__our-project
    &__our-project {
    }
+
+   // .page__testimonials
+   &__testimonials {
+   }
+
+   // .page__info
+   &__info {
+   }
 }
 
 // Hero
@@ -503,7 +511,7 @@ body {
       @media (max-width: toEm($tablet)) {
          flex: 0 0 auto;
 
-			padding: 0;
+         padding: 0;
       }
    }
 }
@@ -701,7 +709,7 @@ body {
 
    @media (max-width: toEm($tablet)) {
       flex-direction: row;
-		justify-content: space-between;
+      justify-content: space-between;
    }
 
    @media (max-width: toEm($mobile)) {
@@ -944,6 +952,411 @@ body {
          aspect-ratio: 434 / 501;
          width: 100%;
          height: 100%;
+      }
+   }
+}
+
+// Testimonial
+.testimonial {
+   // .testimonial__container
+   &__container {
+      @include adaptiveValue("padding-top", 130, 15);
+      @include adaptiveValue("padding-bottom", 130, 30);
+      display: flex;
+      border-top: toRem(1) solid #c5c5c5;
+
+      @include adaptiveValue("column-gap", 37, 15);
+      row-gap: toRem(15);
+
+      @media (max-width: toEm($tablet)) {
+         flex-wrap: wrap;
+      }
+   }
+
+   // .testimonial__block
+   .testimonial__block {
+      flex: 0 0 toRem(324);
+
+      @media (max-width: toEm($tablet)) {
+         flex-basis: 100%;
+         margin: 0 auto;
+         text-align: center;
+
+         .block-header__lable {
+            justify-content: center;
+         }
+      }
+   }
+
+   // .testimonial__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(toRem(400), 1fr));
+      grid-auto-rows: auto;
+      @include adaptiveValue("column-gap", 36, 15);
+      row-gap: toRem(15);
+
+      @media (max-width: toEm($mobileSmall)) {
+         grid-template-columns: repeat(auto-fill, minmax(toRem(290), 1fr));
+      }
+   }
+
+   // .testimonial__item
+   &__item {
+      align-self: start;
+   }
+}
+
+.item-testimonial {
+   @include adaptiveValue("padding-top", 50, 10);
+   @include adaptiveValue("padding-bottom", 50, 10);
+   @include adaptiveValue("padding-left", 37, 10);
+   @include adaptiveValue("padding-right", 37, 10);
+   background-color: #f6f6f6;
+   // .item-testimonial__content
+   &__content {
+      display: flex;
+      column-gap: toRem(16);
+      align-items: center;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 34, 15);
+      }
+   }
+   // .item-testimonial__img
+   &__img {
+      flex: 0 0 toRem(100);
+      width: toRem(100);
+      border-radius: 50%;
+   }
+   // .item-testimonial__info
+   &__info {
+   }
+   // .item-testimonial__name
+   &__name {
+      color: $colorDark;
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 20, 18);
+      font-weight: 600;
+      line-height: 1.5;
+   }
+   // .item-testimonial__position
+   &__position {
+      color: $colorGray;
+      line-height: 1.37;
+   }
+   // .item-testimonial__rating
+   &__rating {
+   }
+   // .item-testimonial__text
+   &__text {
+      color: $colorGray;
+      @include adaptiveValue("font-size", 22, 16);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.45;
+   }
+}
+
+// Info
+.info {
+   color: #fff;
+   background-color: $colorViolet;
+   @include adaptiveValue("padding-top", 130, 30);
+   @include adaptiveValue("padding-bottom", 130, 30);
+   // .info__conatainer
+   &__container {
+      display: flex;
+      column-gap: toRem(53);
+
+      @media (max-width: toEm($containerWidth)) {
+         flex-direction: column;
+         gap: toRem(40);
+      }
+   }
+   // .info__how
+   &__how {
+      flex: 0 1 toRem(587);
+   }
+
+   // .info__book
+   &__book {
+      flex: 0 1 toRem(580);
+   }
+}
+
+.how-info {
+   // .how-info__header
+   &__header {
+      & .block-header__text {
+         font-weight: 400;
+      }
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 34, 15);
+      }
+   }
+   // .how-info__expierience
+   &__expierience {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 50, 20);
+      }
+   }
+
+   // .how-info__list
+   &__list {
+   }
+}
+
+.expierience-info {
+   background-color: $colorGreen;
+   @include adaptiveValue("padding", 35, 10);
+
+   font-family: "Poppins";
+   display: flex;
+   @include adaptiveValue("gap", 23, 8);
+   align-items: center;
+
+   // .expierience-info__box
+   &__box {
+      flex: 0 0 toRem(128);
+      @include adaptiveValue("flex-basis", 128, 80);
+      @include adaptiveValue("width", 128, 80);
+      @include adaptiveValue("height", 128, 80);
+      border-radius: 50%;
+      border: toRem(4) solid $colorViolet;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      span {
+         @include adaptiveValue("font-size", 18, 14);
+         font-weight: 600;
+      }
+   }
+   // .expierience-info__info
+   &__info {
+      display: flex;
+
+      span {
+         @include adaptiveValue("font-size", 35, 22);
+         font-size: toRem(35);
+         font-weight: 700;
+         line-height: 1.1;
+      }
+   }
+
+   // .expierience-info__text
+   &__text {
+      @include adaptiveValue("font-size", 25, 16);
+      line-height: 1.28;
+
+      span {
+         font-weight: 700;
+      }
+   }
+}
+
+.list-info {
+   // .list-info__item
+
+   & > *:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 18, 12);
+   }
+   &__item {
+      display: flex;
+      @include adaptiveValue("column-gap", 16, 10);
+
+      @media (min-width: toEm($containerWidth)) {
+         max-width: toRem(514);
+      }
+
+      &:not(:last-child) {
+         .list-info__body {
+            width: 100%;
+            @include adaptiveValue("padding-bottom", 21, 14);
+            border-bottom: toRem(1) solid $mainColor;
+         }
+      }
+
+      &:before {
+         content: "";
+         width: toRem(27);
+         height: toRem(27);
+         flex: 0 0 toRem(27);
+         margin-top: toRem(6);
+         background: url("../img/info/vector-deal.svg") 0 0 no-repeat;
+      }
+   }
+
+   // .list-info__body
+   &__body {
+   }
+
+   // .list-info__title
+   &__title {
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 22, 20);
+      line-height: 1.5;
+      font-weight: 600;
+   }
+   // .list-info__text
+   &__text {
+      @include adaptiveValue("font-size", 18, 16);
+      font-size: toRem(18);
+      line-height: 1.55;
+   }
+}
+
+.book-info {
+   // .book-info__header
+   &__header {
+      &:not(:last-child) {
+         margin-bottom: toRem(24);
+      }
+   }
+   // .book-info__form
+   &__form {
+   }
+}
+
+.form-book {
+   background-color: $mainColor;
+   @include adaptiveValue("padding", 58, 10);
+
+   display: flex;
+   flex-direction: column;
+   @include adaptiveValue("gap", 30, 10);
+
+   // .form-book__item
+   &__item {
+      height: toRem(65);
+      padding: toRem(5) toRem(10) toRem(5) toRem(33);
+      @include adaptiveValue("padding-left", 33, 15);
+      border: toRem(1) solid #ddd;
+      background-color: #f8f8f8;
+      transition: all 0.3s;
+
+      &::placeholder {
+         color: $colorDark;
+         @include adaptiveValue("font-size", 18, 16);
+      }
+
+      &:focus-visible::placeholder {
+         opacity: 0;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #f1f1f3;
+         }
+      }
+
+      // .form-book__item--textarea
+      &--textarea {
+         padding-top: toRem(10);
+         height: toRem(139);
+         resize: none;
+      }
+   }
+   // .form-book__box
+   &__box {
+      display: flex;
+      flex-direction: column;
+      row-gap: toRem(10);
+      color: #000;
+
+      @media (min-width: toEm($mobileSmall)) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: toRem(23);
+      }
+
+      .form-book__item {
+         display: flex;
+         align-items: center;
+         position: relative;
+
+         input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0 toRem(19) 0 toRem(33);
+            @include adaptiveValue("padding-left", 33, 15);
+         }
+      }
+
+      input[type="time"],
+      input[type="date"] {
+         background-color: rgba(248, 248, 248, 0);
+         transition: background-color 0.3s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               background-color: #f1f1f300;
+            }
+         }
+      }
+
+      input[type="date"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-calendar-picker-indicator {
+         width: 100%;
+         height: 100%;
+         cursor: pointer;
+      }
+
+      input[type="date"]::-webkit-calendar-picker-indicator {
+         opacity: 1;
+         background: url("../img/info/date.svg") right / toRem(16) no-repeat;
+      }
+
+      input[type="time"]::-webkit-calendar-picker-indicator {
+         opacity: 0;
+      }
+   }
+
+   .date {
+      .lable {
+         opacity: 0;
+      }
+
+      input[type="date"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-calendar-picker-indicator {
+         width: toRem(16);
+      }
+   }
+
+   .time {
+      .lable {
+         opacity: 0;
+      }
+
+      input[type="time"]::-webkit-calendar-picker-indicator {
+         width: toRem(16);
+         background-position: right;
+         opacity: 1;
+      }
+   }
+
+   // .form-book__button
+   &__button {
+      @media (min-width: toEm($mobileSmall)) {
+         align-self: flex-start;
+      }
+
+      &.button--bg-green {
+         color: $colorDark;
+         transition: all 0.3s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               color: $mainColor;
+            }
+         }
       }
    }
 }
