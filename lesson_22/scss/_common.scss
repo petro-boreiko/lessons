@@ -25,13 +25,20 @@
       border-radius: toRem(5);
    }
 
+   &--bg-dark {
+      background-color: $colorDark;
+      color: $mainColor;
+
+
+		transition: all 0.3s;
+   }
+
    &--color-dark {
       color: $colorDark;
    }
 
    &--bg-green {
       background-color: $colorGreen;
-      color: $mainColor;
       transition: all 0.3s;
 
       @media (any-hover: hover) {
@@ -92,9 +99,9 @@
       }
    }
 
-	&--white {
-		color: $mainColor;
-	}
+   &--white {
+      color: $mainColor;
+   }
 
    // .block-header__lable
    &__lable {
@@ -144,9 +151,9 @@
          @include adaptiveValue("margin-bottom", 16, 8);
       }
 
-		&--white {
-			color: $mainColor;
-		}
+      &--white {
+         color: $mainColor;
+      }
 
       p {
          &:not(:last-child) {

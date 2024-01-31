@@ -29,6 +29,15 @@ window.addEventListener("resize", function () {
       "beforeend", // placeOriginalParent
       "beforeend" //placeNewParent
    );
+
+   transferElement(
+      ".news__button", // element
+      ".news__header", // originalParent
+      ".news__items", // newParent
+      991.98, // sizeToTransfer
+      "beforeend", // placeOriginalParent
+      "beforeend" //placeNewParent
+   );
 });
 
 // Функція для переносу елементу
@@ -73,14 +82,14 @@ function transferElement(
    }
 }
 
-transferElement(
-   ".our-project__button", // element
-   ".our-project__container", // originalParent
-   ".our-project", // newParent
-   767.98, // sizeToTransfer
-   "beforeend", // placeOriginalParent
-   "beforeend" //placeNewParent
-);
+// transferElement(
+//    ".our-project__button", // element
+//    ".our-project__container", // originalParent
+//    ".our-project", // newParent
+//    767.98, // sizeToTransfer
+//    "beforeend", // placeOriginalParent
+//    "beforeend" //placeNewParent
+// );
 
 function counter(element) {
    let minValue = 0;

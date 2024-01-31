@@ -343,6 +343,10 @@ body {
    // .page__info
    &__info {
    }
+
+   // .page__news
+   &__news {
+   }
 }
 
 // Hero
@@ -1356,6 +1360,188 @@ body {
             &:hover {
                color: $mainColor;
             }
+         }
+      }
+   }
+}
+
+// News
+.news {
+   @include adaptiveValue("padding-top", 150, 30);
+   @include adaptiveValue("padding-bottom", 150, 30);
+
+   // .news__container
+   &__container {
+   }
+   // .news__header
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 40, 15);
+      }
+   }
+   // .news__button
+   &__button {
+      @media (min-width: toEm($mobile)) {
+         margin-top: toRem(10);
+      }
+
+      .transfer-element & {
+
+         @media (max-width: toEm($mobileSmall)) {
+            display: block;
+				width: 100%;
+         }
+      }
+   }
+   // .news__items
+   &__items {
+      @media (min-width: toEm($tablet)) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         @include adaptiveValue("gap", 36, 10);
+      }
+   }
+   // .news__item
+   &__item {
+      @media (max-width: toEm($tablet	)) {
+         &:not(:last-child) {
+            margin-bottom: toRem(25);
+         }
+      }
+   }
+}
+
+.item-news {
+   // .item-news__content
+   &__content {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 19, 10);
+      }
+   }
+   // .item-news__img
+   &__img {
+      aspect-ratio: 592 / 363;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+   }
+   // .item-news__box
+   &__box {
+      @media (min-width: toEm($mobileSmall)) {
+         display: flex;
+      }
+   }
+
+   &__date,
+   &__name,
+   &__position {
+      padding: toRem(5);
+      flex: 1 1 33.33333333%;
+      min-height: toRem(65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.22;
+      text-transform: capitalize;
+   }
+
+   &__name,
+   &__position {
+      color: #208068;
+      background-color: $colorGreen;
+
+      display: flex;
+      align-items: center;
+      column-gap: toRem(5);
+   }
+
+   // .item-news__date
+   &__date {
+      background-color: $colorViolet;
+      font-size: toRem(18);
+      color: $mainColor;
+      font-weight: 600;
+   }
+   // .item-news__name
+   &__name {
+      @media (max-width: toEm($mobileSmall)) {
+         border-bottom: toRem(1) solid #208068;
+      }
+
+      @media (min-width: toEm($mobileSmall)) {
+         border-right: toRem(1) solid #208068;
+      }
+
+      &::before {
+         content: "";
+         width: toRem(14);
+         height: toRem(14);
+         flex-basis: toRem(14);
+         background: url("../img/news/user.svg") center no-repeat;
+      }
+   }
+   // .item-news__position
+   &__position {
+      &::before {
+         content: "";
+         width: toRem(13);
+         height: toRem(13);
+         flex-basis: toRem(13);
+         background: url("../img/news/lable.svg") center no-repeat;
+      }
+
+      @media (max-width: toEm($mobileSmall)) {
+         border-top: toRem(1) solid #208068;
+      }
+
+      @media (min-width: toEm($mobileSmall)) {
+         border-left: toRem(1) solid #208068;
+      }
+   }
+   // .item-news__title
+   &__title {
+      color: $colorDark;
+
+      font-family: "Poppins";
+      @include adaptiveValue("font-size", 30, 24);
+      font-weight: 600;
+      line-height: 1.26;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(13);
+      }
+   }
+   // .item-news__text
+   &__text {
+      color: $colorGray;
+      font-size: toRem(18);
+      line-height: 1.44;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 26, 10);
+      }
+
+      p {
+         &:not(:last-child) {
+            margin-bottom: toRem(10);
+         }
+      }
+   }
+   // .item-news__more
+   &__more {
+      color: $colorViolet;
+
+      font-size: toRem(18);
+      font-weight: 600;
+      text-transform: capitalize;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
          }
       }
    }
