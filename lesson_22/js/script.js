@@ -96,7 +96,6 @@ function counter(element) {
          clearInterval(intervalElement);
       } else {
          minValue++;
-         console.log(minValue);
       }
    }, delay);
 }

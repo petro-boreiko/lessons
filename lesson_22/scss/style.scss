@@ -1390,10 +1390,9 @@ body {
       }
 
       .transfer-news & {
-
          @media (max-width: toEm($mobileSmall)) {
             display: block;
-				width: 100%;
+            width: 100%;
          }
       }
    }
@@ -1441,7 +1440,7 @@ body {
    &__position {
       padding: toRem(5);
       flex: 1 1 33.33333333%;
-      min-height: toRem(65);
+      @include adaptiveValue("min-height", 65, 45);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1544,5 +1543,99 @@ body {
             text-decoration: underline;
          }
       }
+   }
+}
+
+// Footer
+.footer {
+   background-color: $colorDark;
+
+   // .footer__container
+   &__container {
+      @include adaptiveValue("padding-top", 100, 20);
+      @include adaptiveValue("padding-bottom", 100, 20);
+      color: $mainColor;
+   }
+   // .footer__header
+   &__header {
+   }
+}
+.header-footer {
+   display: flex;
+      flex-direction: column;
+      row-gap: toRem(20);
+
+   @media (min-width: toEm($mobile)) {
+		flex-direction: row;
+      align-items: flex-start;
+
+      @include adaptiveValue(
+         "column-gap",
+         180,
+         30,
+         0,
+         $containerWidth,
+         $tablet
+      );
+   }
+
+   // .header-footer__logo
+   &__logo {
+
+      max-width: toRem(180);
+      width: 100%;
+
+		 @media (min-width: toEm($tablet)) {
+			margin-top: toRem(13);
+		 }
+   }
+   // .header-footer__contacts
+   &__contacts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(toRem(240), 1fr));
+      @include adaptiveValue("column-gap", 60, 10, 0, $containerWidth, $tablet);
+
+      row-gap: toRem(15);
+
+      @media (min-width: toEm($mobile)) {
+         flex-grow: 1;
+      }
+   }
+   // .header-footer__item
+   &__item {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(10);
+   }
+
+   // .header-footer__icon
+   &__icon {
+      padding: toRem(15);
+      @include adaptiveValue("width", 68, 50);
+      @include adaptiveValue("height", 68, 50);
+      width: toRem(68);
+      height: toRem(68);
+      border-radius: 50%;
+      background-color: #4c4d52;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   // .header-footer__wrap
+   &__wrap {
+   }
+
+   // .header-footer__title
+   &__title {
+      font-family: "Poppins";
+      font-size: toRem(20);
+      line-height: 1.5;
+      font-weight: 600;
+   }
+   // .header-footer__link
+   &__link {
+      font-size: toRem(18);
+      line-height: 1/22;
    }
 }
