@@ -1555,18 +1555,64 @@ body {
       @include adaptiveValue("padding-top", 100, 20);
       @include adaptiveValue("padding-bottom", 100, 20);
       color: $mainColor;
+
+      > *:not(:last-child) {
+         border-bottom: toRem(1) solid #6c6d72;
+      }
    }
    // .footer__header
    &__header {
+      @include adaptiveValue("padding-bottom", 50, 20);
+   }
+   // .footer__main
+   &__main {
+      @include adaptiveValue("padding-top", 50, 20);
+      @include adaptiveValue("padding-bottom", 54, 20);
+
+		display: flex;
+		row-gap: toRem(25);
+      flex-direction: column;
+      @media (min-width: toEm($tablet)) {
+flex-direction: row;
+         align-items: flex-start;
+         justify-content: space-between;
+         @include adaptiveValue(
+            "column-gap",
+            80,
+            10,
+            0,
+            $containerWidth,
+            $tablet
+         );
+      }
+   }
+   // .footer__nav
+   &__nav {
+      @media (min-width: toEm($tablet)) {
+         flex: 1 1 toRem(660);
+      }
+   }
+   // .footer__subscribe
+   &__subscribe {
+max-width: toRem(480);
+
+      @media (min-width: toEm($tablet)) {
+         flex: 0 1 toRem(479);
+      }
+
+      &:not(:last-child) {
+         margin-bottom: toRem(25);
+      }
    }
 }
+
 .header-footer {
    display: flex;
-      flex-direction: column;
-      row-gap: toRem(20);
+   flex-direction: column;
+   row-gap: toRem(20);
 
    @media (min-width: toEm($mobile)) {
-		flex-direction: row;
+      flex-direction: row;
       align-items: flex-start;
 
       @include adaptiveValue(
@@ -1581,13 +1627,12 @@ body {
 
    // .header-footer__logo
    &__logo {
-
       max-width: toRem(180);
       width: 100%;
 
-		 @media (min-width: toEm($tablet)) {
-			margin-top: toRem(13);
-		 }
+      @media (min-width: toEm($tablet)) {
+         margin-top: toRem(13);
+      }
    }
    // .header-footer__contacts
    &__contacts {
@@ -1621,6 +1666,14 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      transition: background-color 0.3s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #59595e;
+         }
+      }
    }
    // .header-footer__wrap
    &__wrap {
@@ -1637,5 +1690,133 @@ body {
    &__link {
       font-size: toRem(18);
       line-height: 1/22;
+      transition: color 0.3s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $colorGreen;
+         }
+      }
+   }
+}
+
+.nav-footer {
+   // display: grid;
+   // grid-template-columns: repeat(auto-fill, minmax(toRem(120), auto));
+   // @include adaptiveValue("column-gap", 100, 20, 0, $containerWidth, $tablet);
+
+   display: flex;
+   @include adaptiveValue("column-gap", 100, 25, 0, $containerWidth, $tablet);
+   row-gap: toRem(20);
+   flex-wrap: wrap;
+
+   // .nav-footer__item
+   &__item {
+   }
+   // .nav-footer__title
+   &__title {
+      font-family: "Poppins";
+      font-size: toRem(20);
+      color: $colorGreen;
+      font-weight: 600;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+
+      &:not(:last-child) {
+         margin-bottom: toRem(13);
+      }
+
+      &::before {
+         content: "";
+         width: toRem(13);
+         height: toRem(13);
+         background-color: $colorViolet;
+      }
+   }
+   // .nav-footer__list
+   &__list {
+      > *:not(:last-child) {
+         // @include adaptiveValue("margin-bottom", 20, 10);
+         margin-bottom: toRem(20);
+      }
+   }
+   // .nav-footer__link
+   &__link {
+      a {
+         font-size: toRem(18);
+         transition: color 0.3s;
+         line-height: 1.2;
+
+         @media (any-hover: hover) {
+            &:hover {
+               color: $colorGreen;
+            }
+         }
+      }
+   }
+}
+
+.subscribe-footer {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   background-color: #474950;
+   padding-top: toRem(35);
+   padding-bottom: toRem(35);
+   @include adaptiveValue("padding-left", 36, 15, 0, $containerWidth, $tablet);
+   @include adaptiveValue("padding-right", 36, 15, 0, $containerWidth, $tablet);
+
+   // .subscribe-footer__title
+   &__title {
+      font-family: "Poppins";
+      font-size: toRem(20);
+      font-weight: 600;
+      line-height: 1.5;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(10);
+      }
+   }
+   // .subscribe-footer__text
+   &__text {
+      font-size: toRem(18);
+      line-height: 1.2;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(20);
+      }
+   }
+   // .subscribe-footer__form
+   &__form {
+      display: flex;
+
+      @media (max-width: toEm($mobileSmall)) {
+         flex-direction: column;
+      }
+   }
+   // .subscribe-footer__input
+   &__input {
+      min-height: toRem(65);
+      flex-grow: 1;
+      padding: toRem(10) toRem(25);
+
+      &::placeholder {
+         font-size: toRem(18);
+         color: $colorDark;
+      }
+
+      &:focus-visible::placeholder {
+         opacity: 0;
+      }
+   }
+   // .subscribe-footer__button
+   &__button {
+      &.button {
+         min-width: toRem(143);
+         font-weight: 600;
+      }
+      // flex: 0 1 toRem(143);
    }
 }

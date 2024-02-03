@@ -1,7 +1,7 @@
 .button {
    min-width: toRem(185);
 
-   padding: toRem(22) toRem(15);
+   padding: toRem(22) toRem(10);
    text-align: center;
    color: $mainColor;
    font-size: toRem(18);
@@ -22,13 +22,11 @@
       min-width: toRem(160);
       padding: toRem(15) toRem(5);
       font-size: toRem(16);
-      border-radius: toRem(5);
    }
 
    &--bg-dark {
       background-color: $colorDark;
       color: $mainColor;
-
 
 		transition: all 0.3s;
    }
