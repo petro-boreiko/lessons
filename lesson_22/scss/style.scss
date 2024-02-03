@@ -1569,11 +1569,11 @@ body {
       @include adaptiveValue("padding-top", 50, 20);
       @include adaptiveValue("padding-bottom", 54, 20);
 
-		display: flex;
-		row-gap: toRem(25);
+      display: flex;
+      row-gap: toRem(25);
       flex-direction: column;
       @media (min-width: toEm($tablet)) {
-flex-direction: row;
+         flex-direction: row;
          align-items: flex-start;
          justify-content: space-between;
          @include adaptiveValue(
@@ -1594,8 +1594,6 @@ flex-direction: row;
    }
    // .footer__subscribe
    &__subscribe {
-max-width: toRem(480);
-
       @media (min-width: toEm($tablet)) {
          flex: 0 1 toRem(479);
       }
@@ -1603,6 +1601,11 @@ max-width: toRem(480);
       &:not(:last-child) {
          margin-bottom: toRem(25);
       }
+   }
+
+   // .footer__copyright
+   &__copyright {
+      padding-top: toRem(22);
    }
 }
 
@@ -1759,14 +1762,15 @@ max-width: toRem(480);
 }
 
 .subscribe-footer {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
    background-color: #474950;
    padding-top: toRem(35);
    padding-bottom: toRem(35);
    @include adaptiveValue("padding-left", 36, 15, 0, $containerWidth, $tablet);
    @include adaptiveValue("padding-right", 36, 15, 0, $containerWidth, $tablet);
+
+   @media (min-width: toEm($mobile)) {
+      max-width: toRem(480);
+   }
 
    // .subscribe-footer__title
    &__title {
@@ -1817,6 +1821,87 @@ max-width: toRem(480);
          min-width: toRem(143);
          font-weight: 600;
       }
-      // flex: 0 1 toRem(143);
+   }
+}
+
+.copyright-footer {
+   font-size: toRem(18);
+   line-height: 1.2;
+
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap: toRem(15);
+
+   @media (min-width: toEm($tablet)) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+   // .copyright-footer__text
+   &__text {
+      text-align: center;
+   }
+   // .copyright-footer__link
+   &__link {
+      transition: all 0.3s;
+   }
+   // .copyright-footer__link--green
+   &__link--green {
+      color: $colorGreen;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $colorViolet;
+         }
+      }
+   }
+   // .copyright-footer__link--purple
+   &__link--purple {
+      color: $colorViolet;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $colorGreen;
+         }
+      }
+   }
+   // .copyright-footer__social
+   &__social {
+   }
+}
+.social {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: toRem(12);
+
+   // .social__lable
+   &__lable {
+      // display: inline-block;
+   }
+   // .social__items
+   &__items {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: toRem(16);
+   }
+   // .social__item
+   &__item {
+      width: toRem(18);
+      height: toRem(17);
+		cursor: pointer;
+
+      img {
+         width: 100%;
+			transition: transform 0.3s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.15);
+            }
+         }
+      }
    }
 }
